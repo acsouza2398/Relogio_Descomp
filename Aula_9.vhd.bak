@@ -1,0 +1,241 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Aula_9 is
+  -- Total de bits das entradas e saidas
+  generic ( larguraDados : natural := 8;
+        larguraEnderecos : natural := 9;
+		  tamanhoCommando : natural := 2;
+		  size : natural := 1;
+        simulacao : boolean := TRUE -- para gravar na placa, altere de TRUE para FALSE
+  );
+  port   (
+    CLOCK_50 : in std_logic;
+    KEY: in std_logic_vector(4 downto 0);
+	 SW : in std_logic_vector(9 downto 0);
+	 FPGA_RESET : in std_logic;
+	 LEDR  : out std_logic_vector(9 downto 0);
+	 HEX0 : out std_logic_vector(6 downto 0);
+	 HEX1 : out std_logic_vector(6 downto 0);
+	 HEX2 : out std_logic_vector(6 downto 0);
+	 HEX3 : out std_logic_vector(6 downto 0);
+	 HEX4 : out std_logic_vector(6 downto 0);
+	 HEX5 : out std_logic_vector(6 downto 0)
+  );
+end entity;
+
+
+architecture arquitetura of Aula_9 is
+
+-- Faltam alguns sinais:
+  signal proc_out : std_logic_vector (larguraDados-1 downto 0);
+  signal Endereco : std_logic_vector (larguraEnderecos-1 downto 0);
+  signal Inc : std_logic_vector (larguraEnderecos-1 downto 0);
+  signal CLK : std_logic;
+  signal Reset_A : std_logic;
+  signal habilita : std_logic;
+  signal blocoHabilita : std_logic;
+  signal blocoSaida : std_logic_vector (7 downto 0);
+  signal blocoLed : std_logic_vector (7 downto 0);
+  signal blocoHabLed : std_logic;
+  signal addr: std_logic_vector (8 downto 0);
+  signal Sinais_romdec : std_logic_vector (12 downto 0);
+  signal ligaLed7 : std_logic_vector (7 downto 0);
+  signal ligaLed8 : std_logic;
+  signal ligaLed9 : std_logic;
+  signal ligaHex0 : std_logic_vector (6 downto 0);
+  signal ligaHex1 : std_logic_vector (6 downto 0);
+  signal ligaHex2 : std_logic_vector (6 downto 0);
+  signal ligaHex3 : std_logic_vector (6 downto 0);
+  signal ligaHex4 : std_logic_vector (6 downto 0);
+  signal ligaHex5 : std_logic_vector (6 downto 0);
+  signal dadoHex0 : std_logic_vector (3 downto 0);
+  signal dadoHex1 : std_logic_vector (3 downto 0);
+  signal dadoHex2 : std_logic_vector (3 downto 0);
+  signal dadoHex3 : std_logic_vector (3 downto 0);
+  signal dadoHex4 : std_logic_vector (3 downto 0);
+  signal dadoHex5 : std_logic_vector (3 downto 0);
+  signal habLeituraMEM : std_logic;
+  signal habEscritaMEM : std_logic;
+  signal saidaLed7 : std_logic;
+  signal saidaLed8 : std_logic;
+  signal saidaLed9 : std_logic;
+  signal saidaHex0 : std_logic;
+  signal saidaHex1 : std_logic;
+  signal saidaHex2 : std_logic;
+  signal saidaHex3 : std_logic;
+  signal saidaHex4 : std_logic;
+  signal saidaHex5 : std_logic;
+  signal saidaSW7 : std_logic;
+  signal saidaSW8 : std_logic;
+  signal saidaSW9 : std_logic;
+  signal saidaKEY0 : std_logic;
+  signal saidaKEY1 : std_logic;
+  signal saidaKEY2 : std_logic;
+  signal saidaKEY3 : std_logic;
+  signal saidaRESET : std_logic;
+  signal dLeituraRAM : STD_LOGIC_VECTOR (larguraDados-1 downto 0);
+  signal clk_ff : std_logic;
+  signal entradaKEY0 : std_logic;
+  signal entradaBufKEY0 : std_logic_vector (7 downto 0);
+  signal entradaBufKEY1 : std_logic_vector (7 downto 0);
+  signal limpaLeitura : std_logic;
+
+begin
+
+-- Instanciando os componentes:
+
+-- Para simular, fica mais simples tirar o edgeDetector
+gravar:  if simulacao generate
+CLK <= KEY(0);
+else generate
+detectorSub0: work.edgeDetector(bordaSubida)
+        port map (clk => CLOCK_50, entrada => (not KEY(0)), saida => CLK);
+end generate;
+
+-- Falta acertar o conteudo da ROM (no arquivo memoriaROM.vhd)
+ROM1 : entity work.memoriaROM   generic map (dataWidth => 13, addrWidth => larguraEnderecos)
+          port map (Endereco => Endereco, Dado => Sinais_romdec);
+					  
+memoriaRAM : entity work.memoriaRAM   generic map (dataWidth => 8, addrWidth => 8)
+          port map (addr => addr(5 downto 0), we => habEscritaMEM, re => habLeituraMEM, habilita => blocoHabilita, dado_in => proc_out, dado_out => dLeituraRAM, clk => CLK);
+
+processador : entity work.processador generic map ( larguraDados => larguraDados, larguraEnderecos => 9, tamanhoCommando => 2)
+			 port map (CLOCK_50 => CLK, reset => Reset_A, instruction => Sinais_romdec, data_in => dLeituraRAM, rd => habLeituraMEM,
+						  wr => habEscritaMEM, data_out => proc_out, data_address => addr, rom_address => Endereco);
+
+decoderBloco :  entity work.decoder3x8
+        port map(entrada => addr(8 downto 6), saida => blocoSaida);
+		  
+decoderEnd :  entity work.decoder3x8
+        port map(entrada => addr(2 downto 0), saida => blocoLed);
+		  
+-- Leds
+		  
+saidaLed7 <= blocoHabLed AND habEscritaMEM AND blocoLed(0) AND NOT addr(5);
+saidaLed8 <= blocoHabLed AND habEscritaMEM AND blocoLed(1) AND NOT addr(5);
+saidaLed9 <= blocoHabLed AND habEscritaMEM AND blocoLed(2) AND NOT addr(5);
+			 	
+blocoHabilita <= blocoSaida(0);
+blocoHabLed <= blocoSaida(4);	
+
+RegLed7 : entity work.registradorGenerico   generic map (larguraDados => larguraDados)
+          port map (DIN => proc_out, DOUT => ligaLed7, ENABLE => saidaLed7, CLK => CLK, RST => '0');
+			 
+ffLed8 : entity work.flipFlop
+          port map (DIN => proc_out(0), DOUT => ligaLed8, ENABLE => saidaLed8, CLK => CLK, RST => '0');
+			 
+ffLed9 : entity work.flipFlop
+          port map (DIN => proc_out(0), DOUT => ligaLed9, ENABLE => saidaLed9, CLK => CLK, RST => '0');
+			 
+-- Display Hex
+	
+saidaHex0 <= blocoHabLed AND habEscritaMEM AND blocoLed(0) AND addr(5);
+saidaHex1 <= blocoHabLed AND habEscritaMEM AND blocoLed(1) AND addr(5);
+saidaHex2 <= blocoHabLed AND habEscritaMEM AND blocoLed(2) AND addr(5);
+saidaHex3 <= blocoHabLed AND habEscritaMEM AND blocoLed(3) AND addr(5);
+saidaHex4 <= blocoHabLed AND habEscritaMEM AND blocoLed(4) AND addr(5);
+saidaHex5 <= blocoHabLed AND habEscritaMEM AND blocoLed(5) AND addr(5);
+	
+RegHex0 : entity work.registradorGenerico   generic map (larguraDados => 4)
+          port map (DIN => proc_out(3 downto 0), DOUT => dadoHex0, ENABLE => saidaHex0, CLK => CLK, RST => '0');
+
+RegHex1 : entity work.registradorGenerico   generic map (larguraDados => 4)
+          port map (DIN => proc_out(3 downto 0), DOUT => dadoHex1, ENABLE => saidaHex1, CLK => CLK, RST => '0');
+			
+RegHex2 : entity work.registradorGenerico   generic map (larguraDados => 4)
+          port map (DIN => proc_out(3 downto 0), DOUT => dadoHex2, ENABLE => saidaHex2, CLK => CLK, RST => '0');
+			 
+RegHex3 : entity work.registradorGenerico   generic map (larguraDados => 4)
+          port map (DIN => proc_out(3 downto 0), DOUT => dadoHex3, ENABLE => saidaHex3, CLK => CLK, RST => '0');
+			 
+RegHex4 : entity work.registradorGenerico   generic map (larguraDados => 4)
+          port map (DIN => proc_out(3 downto 0), DOUT => dadoHex4, ENABLE => saidaHex4, CLK => CLK, RST => '0');
+			 
+RegHex5 : entity work.registradorGenerico   generic map (larguraDados => 4)
+          port map (DIN => proc_out(3 downto 0), DOUT => dadoHex5, ENABLE => saidaHex5, CLK => CLK, RST => '0');
+			 
+ConHex0 :  entity work.conversorHex7Seg
+        port map(dadoHex => dadoHex0, apaga =>  '0', negativo => '0', overFlow =>  '0', saida7seg => ligaHex0);
+					  
+ConHex1 :  entity work.conversorHex7Seg
+        port map(dadoHex => dadoHex1, apaga =>  '0', negativo => '0', overFlow =>  '0', saida7seg => ligaHex1);
+					  
+ConHex2 :  entity work.conversorHex7Seg
+        port map(dadoHex => dadoHex2, apaga =>  '0', negativo => '0', overFlow =>  '0', saida7seg => ligaHex2);
+					  
+ConHex3 :  entity work.conversorHex7Seg
+        port map(dadoHex => dadoHex3, apaga =>  '0', negativo => '0', overFlow =>  '0', saida7seg => ligaHex3);
+					  
+ConHex4 :  entity work.conversorHex7Seg
+        port map(dadoHex => dadoHex4, apaga =>  '0', negativo => '0', overFlow =>  '0', saida7seg => ligaHex4);
+					  
+ConHex5 :  entity work.conversorHex7Seg
+        port map(dadoHex => dadoHex5, apaga =>  '0', negativo => '0', overFlow =>  '0', saida7seg => ligaHex5);
+		
+		
+-- Switches
+
+saidaSW7 <= blocoSaida(5) AND habLeituraMEM AND blocoLed(0) AND NOT addr(5);
+saidaSW8 <= blocoSaida(5) AND habLeituraMEM AND blocoLed(1) AND NOT addr(5);
+saidaSW9 <= blocoSaida(5) AND habLeituraMEM AND blocoLed(2) AND NOT addr(5);
+		
+BufferSW7 :  entity work.buffer_3_state_8portas
+        port map(entrada => SW(7 downto 0), habilita =>  saidaSW7, saida => dLeituraRAM);		
+		  
+BufferSW8 :  entity work.buffer_3_state
+        port map(entrada => SW(8), habilita =>  saidaSW8, saida => dLeituraRAM(0));		
+		  
+BufferSW9 :  entity work.buffer_3_state
+        port map(entrada => SW(9), habilita =>  saidaSW9, saida => dLeituraRAM(0));		
+		  
+		  
+-- Keys
+
+saidaKEY0 <= blocoSaida(5) AND habLeituraMEM AND blocoLed(0) AND addr(5);
+saidaKEY1 <= blocoSaida(5) AND habLeituraMEM AND blocoLed(1) AND addr(5);
+saidaKEY2 <= blocoSaida(5) AND habLeituraMEM AND blocoLed(2) AND addr(5);
+saidaKEY3 <= blocoSaida(5) AND habLeituraMEM AND blocoLed(3) AND addr(5);
+saidaRESET <= blocoSaida(5) AND habLeituraMEM AND blocoLed(4) AND addr(5);
+		
+BufferKEY0 :  entity work.buffer_3_state_8portas
+        port map(entrada => entradaBufKEY0, habilita =>  saidaKEY0, saida => dLeituraRAM);		
+
+BufferKEY1 :  entity work.buffer_3_state_8portas
+        port map(entrada => entradaBufKEY1, habilita =>  saidaKEY1, saida => dLeituraRAM);		
+
+BufferKEY2 :  entity work.buffer_3_state
+        port map(entrada => KEY(2), habilita =>  saidaKEY2, saida => dLeituraRAM(0));		
+
+BufferKEY3 :  entity work.buffer_3_state
+        port map(entrada => KEY(3), habilita =>  saidaKEY3, saida => dLeituraRAM(0));		
+
+BufferRESET :  entity work.buffer_3_state
+        port map(entrada => FPGA_RESET, habilita =>  saidaRESET, saida => dLeituraRAM(0));
+		
+entradaBufKEY0 <= (7 downto 1 => '0') & entradaKEY0;		
+entradaBufKEY1 <= (7 downto 1 => '0') & KEY(1);
+
+		-- Debounce KEY0
+		  
+detectorSub0: work.edgeDetector(bordaSubida) port map (clk => CLOCK_50, entrada => (not KEY(0)), saida => clk_ff);
+
+ffKEY0 : entity work.flipFlop
+          port map (DIN => '1', DOUT => entradaKEY0, ENABLE => '1', CLK => clk_ff, RST => limpaLeitura);
+			 
+limpaLeitura <= addr(0) AND addr(1) AND addr(2) AND addr(3) AND addr(4) AND addr(5) AND addr(6) AND addr(7) AND addr(8) AND habEscritaMEM;
+	
+-- Saidas:
+
+LEDR(7 downto 0) <= ligaLed7;
+LEDR(8) <= ligaled8;
+LEDR(9) <= ligaled9;
+
+HEX0 <= ligaHex0;
+HEX1 <= ligaHex1;
+HEX2 <= ligaHex2;
+HEX3 <= ligaHex3;
+HEX4 <= ligaHex4;
+HEX5 <= ligaHex5;
+
+end architecture;

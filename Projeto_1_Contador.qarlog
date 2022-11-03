@@ -1,0 +1,33 @@
+Quartus Prime Archive log --	/home/osboxes/DesComp/Aula_9/Projeto_1_Contador.qarlog
+
+Archive:	/home/osboxes/DesComp/Aula_9/Projeto_1_Contador.qar
+Date:		Fri Oct 21 15:09:02 2022
+Quartus Prime		20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+/home/osboxes/DesComp/Aula_9/Aula_9.qpf
+/home/osboxes/DesComp/Aula_9/Aula_9.qsf
+/home/osboxes/DesComp/Aula_9/Aula_9.vhd
+/home/osboxes/DesComp/Aula_9/ULASomaSub.vhd
+/home/osboxes/DesComp/Aula_9/Waveform.vwf
+/home/osboxes/DesComp/Aula_9/buffer_3_state.vhd
+/home/osboxes/DesComp/Aula_9/buffer_3_state_8portas.vhd
+/home/osboxes/DesComp/Aula_9/conversorHex7Seg.vhd
+/home/osboxes/DesComp/Aula_9/decoder3x8.vhd
+/home/osboxes/DesComp/Aula_9/decoderInstru.vhd
+/home/osboxes/DesComp/Aula_9/edgeDetector.vhd
+/home/osboxes/DesComp/Aula_9/flipFlop.vhd
+/home/osboxes/DesComp/Aula_9/logicDesvio.vhd
+/home/osboxes/DesComp/Aula_9/memoriaRAM.vhd
+/home/osboxes/DesComp/Aula_9/memoriaROM.vhd
+/home/osboxes/DesComp/Aula_9/muxGenerico2x1.vhd
+/home/osboxes/DesComp/Aula_9/muxGenerico4x1.vhd
+/home/osboxes/DesComp/Aula_9/muxJmp.vhd
+/home/osboxes/DesComp/Aula_9/processador.vhd
+/home/osboxes/DesComp/Aula_9/registradorGenerico.vhd
+/home/osboxes/DesComp/Aula_9/somaConstante.vhd
+/home/osboxes/intelFPGA_lite/20.1/quartus/linux64/assignment_defaults.qdf
+	======= Total: 22 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

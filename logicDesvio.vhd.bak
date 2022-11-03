@@ -1,0 +1,17 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity logicDesvio is
+  port ( entrada : in std_logic_vector (4 downto 0);
+         saida : out std_logic_vector (1 downto 0)
+  );
+end entity;
+
+architecture comportamento of logicDesvio is
+  
+
+  begin
+saida(0) <= entrada(4) OR (entrada(1) AND entrada(0)) OR entrada(2);
+saida(1) <= entrada(3);
+
+end architecture;
