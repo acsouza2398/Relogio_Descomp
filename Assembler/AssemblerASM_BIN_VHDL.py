@@ -119,11 +119,23 @@ mapa = {
         "KEY3": 355,
         "FPGA_RESET": 356,
 
-        "VAR0": 6,
+        "SUNI": 0,
+        "SDEC": 1,
+        "MUNI": 2,
+        "MDEC": 3,
+        "HUNI": 4,
+        "HDEC": 5,
+
         "VAR1": 7,
         "VAR10": 8,
+        "VAR6": 9,
+        "VAR3": 10,
+        "VAR5": 11,
+        "VAR9": 12,
+        "VAR4": 13,
+        "VAR2": 14,
 
-        "FLAG": 9,
+        "FLAG": 15,
 
         "CLR0": 511,
         "CLR1": 510,
@@ -135,14 +147,16 @@ mapa = {
 # definição dos registradores (em decimal)
 regis = {
         "R0" : 0, #Reg pra uso geral
-        "R1" : 1, #Segundos Unidade
-        "R2" : 2, #Segundos Decimal
-        "R3" : 3, #Minutos Unidade
-        "R4" : 4, #Minutos Decimal
-        "R5" : 5, #Hora Unidade
-        "R6" : 6, #Hora Decimal
-        "R7" : 7, #Reg pra uso geral
+        "R1" : 1, 
+        "R2" : 2, 
+        "R3" : 3, 
+        "R4" : 4, 
+        "R5" : 5, 
+        "R6" : 6, 
+        "R7" : 7, #Segura 0
 }
+
+jumps = ["JMP", "JEQ", "JSR", "RET", "JGT"]
 
 #Converte o valor após o caractere arroba '@'
 #em um valor hexadecimal de 2 dígitos (8 bits)
@@ -163,7 +177,7 @@ def converteReg(line):
         if '@' in line[1]:
             return f"{regis[line[2]]:03b}"
         else:
-            return f"{regis[line[1].strip(',')]:03b}"
+            return f"{regis[line[2]]:03b}"
     else:
         return "000"
  
@@ -171,7 +185,9 @@ def converteReg(line):
 #em um valor hexadecimal de 2 dígitos (8 bits) 
 def converteCifrao(line):
     line = line.split('$')
-    return f"{int(line[1]):09b}"
+    n = line[1]
+    n = n.split(',')
+    return f"{int(n[0]):09b}"
         
 #Define a string que representa o comentário
 #a partir do caractere cerquilha '#'
@@ -196,9 +212,10 @@ def trataMnemonico(line):
     line = line.replace("\n", "") #Remove o caracter de final de linha
     line = line.replace("\t", "") #Remove o caracter de tabulacao
     line = line.split(' ')
+    op = line[0]
     line[0] = mne[line[0]]
     line = "".join(line)
-    return line
+    return line, op
 
 with open(assembly, "r") as f: #Abre o arquivo ASM
     lines = f.readlines() #Verifica a quantidade de linhas
@@ -243,9 +260,12 @@ with open(destinoBIN, "w") as f:  #Abre o destino BIN
             comentarioLine = defineComentario(line).replace("\n","") #Define o comentário da linha. Ex: #comentario1
             instrucaoLine = defineInstrucao(line).replace("\n","") #Define a instrução. Ex: JSR @14
             
-            opcode = trataMnemonico(instrucaoLine) #Trata o mnemonico. Ex(JSR @14): x"9" @14
+            opcode, op = trataMnemonico(instrucaoLine) #Trata o mnemonico. Ex(JSR @14): x"9" @14
 
-            reg = converteReg(instrucaoLine)
+            if op in jumps:
+                reg = "000"
+            else:
+                reg = converteReg(instrucaoLine)
                   
             if '@' in instrucaoLine: #Se encontrar o caractere arroba '@' 
                 imediato = converteArroba(instrucaoLine) #converte o número após o caractere Ex(JSR @14): x"9" x"0E"
@@ -264,5 +284,5 @@ with open(destinoBIN, "w") as f:  #Abre o destino BIN
             cont+=1 #Incrementa a variável de contagem, utilizada para incrementar as posições de memória no VHDL
             f.write(line) #Escreve no arquivo BIN.txt
             
-            print(line,end = '') #Print apenas para debug
+            #print(line,end = '') #Print apenas para debug
 
