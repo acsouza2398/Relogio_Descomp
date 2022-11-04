@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Aula_9
-Fri Oct 21 14:55:17 2022
+Fri Nov 04 14:40:28 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -13,57 +13,61 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Parameter Settings for User Entity Instance: Top-level Entity: |Aula_9
- 11. Parameter Settings for User Entity Instance: memoriaROM:ROM1
- 12. Parameter Settings for User Entity Instance: memoriaRAM:memoriaRAM
- 13. Parameter Settings for User Entity Instance: processador:processador
- 14. Parameter Settings for User Entity Instance: processador:processador|muxGenerico2x1:MUX1
- 15. Parameter Settings for User Entity Instance: processador:processador|muxGenerico4x1:MUXJMP
- 16. Parameter Settings for User Entity Instance: processador:processador|registradorGenerico:REGA
- 17. Parameter Settings for User Entity Instance: processador:processador|registradorGenerico:PC
- 18. Parameter Settings for User Entity Instance: processador:processador|somaConstante:incrementaPC
- 19. Parameter Settings for User Entity Instance: processador:processador|registradorGenerico:regRet
- 20. Parameter Settings for User Entity Instance: processador:processador|ULASomaSub:ULA1
- 21. Parameter Settings for User Entity Instance: registradorGenerico:RegLed7
- 22. Parameter Settings for User Entity Instance: registradorGenerico:RegHex0
- 23. Parameter Settings for User Entity Instance: registradorGenerico:RegHex1
- 24. Parameter Settings for User Entity Instance: registradorGenerico:RegHex2
- 25. Parameter Settings for User Entity Instance: registradorGenerico:RegHex3
- 26. Parameter Settings for User Entity Instance: registradorGenerico:RegHex4
- 27. Parameter Settings for User Entity Instance: registradorGenerico:RegHex5
- 28. Port Connectivity Checks: "flipFlop:ffKEYR"
- 29. Port Connectivity Checks: "flipFlop:ffKEY3"
- 30. Port Connectivity Checks: "flipFlop:ffKEY2"
- 31. Port Connectivity Checks: "flipFlop:ffKEY1"
- 32. Port Connectivity Checks: "flipFlop:ffKEY0"
- 33. Port Connectivity Checks: "conversorHex7Seg:ConHex5"
- 34. Port Connectivity Checks: "conversorHex7Seg:ConHex4"
- 35. Port Connectivity Checks: "conversorHex7Seg:ConHex3"
- 36. Port Connectivity Checks: "conversorHex7Seg:ConHex2"
- 37. Port Connectivity Checks: "conversorHex7Seg:ConHex1"
- 38. Port Connectivity Checks: "conversorHex7Seg:ConHex0"
- 39. Port Connectivity Checks: "registradorGenerico:RegHex5"
- 40. Port Connectivity Checks: "registradorGenerico:RegHex4"
- 41. Port Connectivity Checks: "registradorGenerico:RegHex3"
- 42. Port Connectivity Checks: "registradorGenerico:RegHex2"
- 43. Port Connectivity Checks: "registradorGenerico:RegHex1"
- 44. Port Connectivity Checks: "registradorGenerico:RegHex0"
- 45. Port Connectivity Checks: "flipFlop:ffLed9"
- 46. Port Connectivity Checks: "flipFlop:ffLed8"
- 47. Port Connectivity Checks: "registradorGenerico:RegLed7"
- 48. Port Connectivity Checks: "decoder3x8:decoderEnd"
- 49. Port Connectivity Checks: "decoder3x8:decoderBloco"
- 50. Port Connectivity Checks: "processador:processador|flipFlop:flipFlop"
- 51. Port Connectivity Checks: "processador:processador|registradorGenerico:regRet"
- 52. Port Connectivity Checks: "processador:processador|registradorGenerico:PC"
- 53. Port Connectivity Checks: "processador:processador|registradorGenerico:REGA"
- 54. Port Connectivity Checks: "processador:processador|muxGenerico4x1:MUXJMP"
- 55. Port Connectivity Checks: "processador:processador"
- 56. Post-Synthesis Netlist Statistics for Top Partition
- 57. Elapsed Time Per Partition
- 58. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |Aula_9
+ 12. Parameter Settings for User Entity Instance: memoriaROM:ROM1
+ 13. Parameter Settings for User Entity Instance: memoriaRAM:memoriaRAM
+ 14. Parameter Settings for User Entity Instance: processador:processador
+ 15. Parameter Settings for User Entity Instance: processador:processador|muxGenerico2x1:MUX1
+ 16. Parameter Settings for User Entity Instance: processador:processador|muxGenerico4x1:MUXJMP
+ 17. Parameter Settings for User Entity Instance: processador:processador|bancoRegistradoresArqRegMem:bancoReg
+ 18. Parameter Settings for User Entity Instance: processador:processador|registradorGenerico:PC
+ 19. Parameter Settings for User Entity Instance: processador:processador|somaConstante:incrementaPC
+ 20. Parameter Settings for User Entity Instance: processador:processador|registradorGenerico:regRet
+ 21. Parameter Settings for User Entity Instance: processador:processador|ULASomaSub:ULA1
+ 22. Parameter Settings for User Entity Instance: registradorGenerico:RegLed7
+ 23. Parameter Settings for User Entity Instance: registradorGenerico:RegHex0
+ 24. Parameter Settings for User Entity Instance: registradorGenerico:RegHex1
+ 25. Parameter Settings for User Entity Instance: registradorGenerico:RegHex2
+ 26. Parameter Settings for User Entity Instance: registradorGenerico:RegHex3
+ 27. Parameter Settings for User Entity Instance: registradorGenerico:RegHex4
+ 28. Parameter Settings for User Entity Instance: registradorGenerico:RegHex5
+ 29. Parameter Settings for User Entity Instance: divisorGenerico:divisorN
+ 30. Parameter Settings for User Entity Instance: divisorGenerico:divisorA
+ 31. Parameter Settings for User Entity Instance: muxGenerico2x1:muxClock
+ 32. Port Connectivity Checks: "flipFlop:ffKEYR"
+ 33. Port Connectivity Checks: "flipFlop:ffKEY3"
+ 34. Port Connectivity Checks: "flipFlop:ffKEY2"
+ 35. Port Connectivity Checks: "flipFlop:ffKEY1"
+ 36. Port Connectivity Checks: "flipFlop:ffKEY0"
+ 37. Port Connectivity Checks: "conversorHex7Seg:ConHex5"
+ 38. Port Connectivity Checks: "conversorHex7Seg:ConHex4"
+ 39. Port Connectivity Checks: "conversorHex7Seg:ConHex3"
+ 40. Port Connectivity Checks: "conversorHex7Seg:ConHex2"
+ 41. Port Connectivity Checks: "conversorHex7Seg:ConHex1"
+ 42. Port Connectivity Checks: "conversorHex7Seg:ConHex0"
+ 43. Port Connectivity Checks: "registradorGenerico:RegHex5"
+ 44. Port Connectivity Checks: "registradorGenerico:RegHex4"
+ 45. Port Connectivity Checks: "registradorGenerico:RegHex3"
+ 46. Port Connectivity Checks: "registradorGenerico:RegHex2"
+ 47. Port Connectivity Checks: "registradorGenerico:RegHex1"
+ 48. Port Connectivity Checks: "registradorGenerico:RegHex0"
+ 49. Port Connectivity Checks: "flipFlop:ffLed9"
+ 50. Port Connectivity Checks: "flipFlop:ffLed8"
+ 51. Port Connectivity Checks: "registradorGenerico:RegLed7"
+ 52. Port Connectivity Checks: "decoder3x8:decoderEnd"
+ 53. Port Connectivity Checks: "decoder3x8:decoderBloco"
+ 54. Port Connectivity Checks: "processador:processador|flipFlop:flipFlop2"
+ 55. Port Connectivity Checks: "processador:processador|flipFlop:flipFlop"
+ 56. Port Connectivity Checks: "processador:processador|registradorGenerico:regRet"
+ 57. Port Connectivity Checks: "processador:processador|registradorGenerico:PC"
+ 58. Port Connectivity Checks: "processador:processador|muxGenerico4x1:MUXJMP"
+ 59. Port Connectivity Checks: "processador:processador"
+ 60. Post-Synthesis Netlist Statistics for Top Partition
+ 61. Elapsed Time Per Partition
+ 62. Analysis & Synthesis Messages
 
 
 
@@ -90,13 +94,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Oct 21 14:55:17 2022       ;
+; Analysis & Synthesis Status     ; Successful - Fri Nov 04 14:40:28 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; Aula_9                                      ;
 ; Top-level Entity Name           ; Aula_9                                      ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 583                                         ;
+; Total registers                 ; 0                                           ;
 ; Total pins                      ; 68                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -204,119 +208,167 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 6           ;
-; Maximum allowed            ; 6           ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 6           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processor 3            ;   0.0%      ;
-;     Processor 4            ;   0.0%      ;
-;     Processor 5            ;   0.0%      ;
-;     Processor 6            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                   ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                            ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
-; muxGenerico4x1.vhd               ; yes             ; User VHDL File  ; /home/osboxes/DesComp/Aula_9/muxGenerico4x1.vhd         ;         ;
-; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; /home/osboxes/DesComp/Aula_9/muxGenerico2x1.vhd         ;         ;
-; logicDesvio.vhd                  ; yes             ; User VHDL File  ; /home/osboxes/DesComp/Aula_9/logicDesvio.vhd            ;         ;
-; memoriaROM.vhd                   ; yes             ; User VHDL File  ; /home/osboxes/DesComp/Aula_9/memoriaROM.vhd             ;         ;
-; ULASomaSub.vhd                   ; yes             ; User VHDL File  ; /home/osboxes/DesComp/Aula_9/ULASomaSub.vhd             ;         ;
-; flipFlop.vhd                     ; yes             ; User VHDL File  ; /home/osboxes/DesComp/Aula_9/flipFlop.vhd               ;         ;
-; buffer_3_state_8portas.vhd       ; yes             ; User VHDL File  ; /home/osboxes/DesComp/Aula_9/buffer_3_state_8portas.vhd ;         ;
-; conversorHex7Seg.vhd             ; yes             ; User VHDL File  ; /home/osboxes/DesComp/Aula_9/conversorHex7Seg.vhd       ;         ;
-; edgeDetector.vhd                 ; yes             ; User VHDL File  ; /home/osboxes/DesComp/Aula_9/edgeDetector.vhd           ;         ;
-; somaConstante.vhd                ; yes             ; User VHDL File  ; /home/osboxes/DesComp/Aula_9/somaConstante.vhd          ;         ;
-; Aula_9.vhd                       ; yes             ; User VHDL File  ; /home/osboxes/DesComp/Aula_9/Aula_9.vhd                 ;         ;
-; decoderInstru.vhd                ; yes             ; User VHDL File  ; /home/osboxes/DesComp/Aula_9/decoderInstru.vhd          ;         ;
-; buffer_3_state.vhd               ; yes             ; User VHDL File  ; /home/osboxes/DesComp/Aula_9/buffer_3_state.vhd         ;         ;
-; decoder3x8.vhd                   ; yes             ; User VHDL File  ; /home/osboxes/DesComp/Aula_9/decoder3x8.vhd             ;         ;
-; registradorGenerico.vhd          ; yes             ; User VHDL File  ; /home/osboxes/DesComp/Aula_9/registradorGenerico.vhd    ;         ;
-; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; /home/osboxes/DesComp/Aula_9/memoriaRAM.vhd             ;         ;
-; processador.vhd                  ; yes             ; User VHDL File  ; /home/osboxes/DesComp/Aula_9/processador.vhd            ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                       ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------+---------+
+; muxGenerico4x1.vhd               ; yes             ; User VHDL File  ; D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/muxGenerico4x1.vhd              ;         ;
+; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/muxGenerico2x1.vhd              ;         ;
+; logicDesvio.vhd                  ; yes             ; User VHDL File  ; D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/logicDesvio.vhd                 ;         ;
+; memoriaROM.vhd                   ; yes             ; User VHDL File  ; D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/memoriaROM.vhd                  ;         ;
+; ULASomaSub.vhd                   ; yes             ; User VHDL File  ; D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/ULASomaSub.vhd                  ;         ;
+; flipFlop.vhd                     ; yes             ; User VHDL File  ; D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/flipFlop.vhd                    ;         ;
+; buffer_3_state_8portas.vhd       ; yes             ; User VHDL File  ; D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/buffer_3_state_8portas.vhd      ;         ;
+; conversorHex7Seg.vhd             ; yes             ; User VHDL File  ; D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/conversorHex7Seg.vhd            ;         ;
+; edgeDetector.vhd                 ; yes             ; User VHDL File  ; D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/edgeDetector.vhd                ;         ;
+; somaConstante.vhd                ; yes             ; User VHDL File  ; D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/somaConstante.vhd               ;         ;
+; Aula_9.vhd                       ; yes             ; User VHDL File  ; D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd                      ;         ;
+; decoderInstru.vhd                ; yes             ; User VHDL File  ; D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/decoderInstru.vhd               ;         ;
+; buffer_3_state.vhd               ; yes             ; User VHDL File  ; D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/buffer_3_state.vhd              ;         ;
+; decoder3x8.vhd                   ; yes             ; User VHDL File  ; D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/decoder3x8.vhd                  ;         ;
+; registradorGenerico.vhd          ; yes             ; User VHDL File  ; D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/registradorGenerico.vhd         ;         ;
+; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/memoriaRAM.vhd                  ;         ;
+; processador.vhd                  ; yes             ; User VHDL File  ; D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/processador.vhd                 ;         ;
+; bancoRegistradoresArqRegMem.vhd  ; yes             ; User VHDL File  ; D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/bancoRegistradoresArqRegMem.vhd ;         ;
+; divisorGenerico.vhd              ; yes             ; User VHDL File  ; D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/divisorGenerico.vhd             ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                  ;
-+---------------------------------------------+----------------+
-; Resource                                    ; Usage          ;
-+---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 517            ;
-;                                             ;                ;
-; Combinational ALUT usage for logic          ; 575            ;
-;     -- 7 input functions                    ; 13             ;
-;     -- 6 input functions                    ; 357            ;
-;     -- 5 input functions                    ; 35             ;
-;     -- 4 input functions                    ; 64             ;
-;     -- <=3 input functions                  ; 106            ;
-;                                             ;                ;
-; Dedicated logic registers                   ; 583            ;
-;                                             ;                ;
-; I/O pins                                    ; 68             ;
-;                                             ;                ;
-; Total DSP Blocks                            ; 0              ;
-;                                             ;                ;
-; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 578            ;
-; Total fan-out                               ; 4739           ;
-; Average fan-out                             ; 3.66           ;
-+---------------------------------------------+----------------+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimate of Logic utilization (ALMs needed) ; 0        ;
+;                                             ;          ;
+; Combinational ALUT usage for logic          ; 0        ;
+;     -- 7 input functions                    ; 0        ;
+;     -- 6 input functions                    ; 0        ;
+;     -- 5 input functions                    ; 0        ;
+;     -- 4 input functions                    ; 0        ;
+;     -- <=3 input functions                  ; 0        ;
+;                                             ;          ;
+; Dedicated logic registers                   ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 68       ;
+;                                             ;          ;
+; Total DSP Blocks                            ; 0        ;
+;                                             ;          ;
+; Maximum fan-out node                        ; CLOCK_50 ;
+; Maximum fan-out                             ; 1        ;
+; Total fan-out                               ; 68       ;
+; Average fan-out                             ; 0.50     ;
++---------------------------------------------+----------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                             ;
-+-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------+---------------------+--------------+
-; Compilation Hierarchy Node          ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                         ; Entity Name         ; Library Name ;
-+-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------+---------------------+--------------+
-; |Aula_9                             ; 575 (30)            ; 583 (0)                   ; 0                 ; 0          ; 68   ; 0            ; |Aula_9                                                     ; Aula_9              ; work         ;
-;    |conversorHex7Seg:ConHex0|       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|conversorHex7Seg:ConHex0                            ; conversorHex7Seg    ; work         ;
-;    |conversorHex7Seg:ConHex1|       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|conversorHex7Seg:ConHex1                            ; conversorHex7Seg    ; work         ;
-;    |conversorHex7Seg:ConHex2|       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|conversorHex7Seg:ConHex2                            ; conversorHex7Seg    ; work         ;
-;    |conversorHex7Seg:ConHex3|       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|conversorHex7Seg:ConHex3                            ; conversorHex7Seg    ; work         ;
-;    |conversorHex7Seg:ConHex4|       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|conversorHex7Seg:ConHex4                            ; conversorHex7Seg    ; work         ;
-;    |conversorHex7Seg:ConHex5|       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|conversorHex7Seg:ConHex5                            ; conversorHex7Seg    ; work         ;
-;    |edgeDetector:detectorSub0|      ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|edgeDetector:detectorSub0                           ; edgeDetector        ; work         ;
-;    |edgeDetector:detectorSub1|      ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|edgeDetector:detectorSub1                           ; edgeDetector        ; work         ;
-;    |edgeDetector:detectorSub2|      ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|edgeDetector:detectorSub2                           ; edgeDetector        ; work         ;
-;    |edgeDetector:detectorSub3|      ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|edgeDetector:detectorSub3                           ; edgeDetector        ; work         ;
-;    |edgeDetector:detectorSubR|      ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|edgeDetector:detectorSubR                           ; edgeDetector        ; work         ;
-;    |flipFlop:ffKEY0|                ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|flipFlop:ffKEY0                                     ; flipFlop            ; work         ;
-;    |flipFlop:ffKEY1|                ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|flipFlop:ffKEY1                                     ; flipFlop            ; work         ;
-;    |flipFlop:ffKEY2|                ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|flipFlop:ffKEY2                                     ; flipFlop            ; work         ;
-;    |flipFlop:ffKEY3|                ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|flipFlop:ffKEY3                                     ; flipFlop            ; work         ;
-;    |flipFlop:ffKEYR|                ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|flipFlop:ffKEYR                                     ; flipFlop            ; work         ;
-;    |flipFlop:ffLed8|                ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|flipFlop:ffLed8                                     ; flipFlop            ; work         ;
-;    |flipFlop:ffLed9|                ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|flipFlop:ffLed9                                     ; flipFlop            ; work         ;
-;    |memoriaRAM:memoriaRAM|          ; 297 (297)           ; 512 (512)                 ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|memoriaRAM:memoriaRAM                               ; memoriaRAM          ; work         ;
-;    |memoriaROM:ROM1|                ; 128 (128)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|memoriaROM:ROM1                                     ; memoriaROM          ; work         ;
-;    |processador:processador|        ; 66 (0)              ; 27 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|processador:processador                             ; processador         ; work         ;
-;       |ULASomaSub:ULA1|             ; 25 (25)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|processador:processador|ULASomaSub:ULA1             ; ULASomaSub          ; work         ;
-;       |decoderInstru:decoderInstru| ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|processador:processador|decoderInstru:decoderInstru ; decoderInstru       ; work         ;
-;       |flipFlop:flipFlop|           ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|processador:processador|flipFlop:flipFlop           ; flipFlop            ; work         ;
-;       |muxGenerico2x1:MUX1|         ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|processador:processador|muxGenerico2x1:MUX1         ; muxGenerico2x1      ; work         ;
-;       |muxGenerico4x1:MUXJMP|       ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|processador:processador|muxGenerico4x1:MUXJMP       ; muxGenerico4x1      ; work         ;
-;       |registradorGenerico:PC|      ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|processador:processador|registradorGenerico:PC      ; registradorGenerico ; work         ;
-;       |registradorGenerico:REGA|    ; 2 (2)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|processador:processador|registradorGenerico:REGA    ; registradorGenerico ; work         ;
-;       |registradorGenerico:regRet|  ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|processador:processador|registradorGenerico:regRet  ; registradorGenerico ; work         ;
-;       |somaConstante:incrementaPC|  ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|processador:processador|somaConstante:incrementaPC  ; somaConstante       ; work         ;
-;    |registradorGenerico:RegHex0|    ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|registradorGenerico:RegHex0                         ; registradorGenerico ; work         ;
-;    |registradorGenerico:RegHex1|    ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|registradorGenerico:RegHex1                         ; registradorGenerico ; work         ;
-;    |registradorGenerico:RegHex2|    ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|registradorGenerico:RegHex2                         ; registradorGenerico ; work         ;
-;    |registradorGenerico:RegHex3|    ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|registradorGenerico:RegHex3                         ; registradorGenerico ; work         ;
-;    |registradorGenerico:RegHex4|    ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|registradorGenerico:RegHex4                         ; registradorGenerico ; work         ;
-;    |registradorGenerico:RegHex5|    ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|registradorGenerico:RegHex5                         ; registradorGenerico ; work         ;
-;    |registradorGenerico:RegLed7|    ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|registradorGenerico:RegLed7                         ; registradorGenerico ; work         ;
-+-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------+---------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; |Aula_9                    ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 68   ; 0            ; |Aula_9             ; Aula_9      ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                          ;
++---------------------------------------------------------------+---------------------------------------------+
+; Register name                                                 ; Reason for Removal                          ;
++---------------------------------------------------------------+---------------------------------------------+
+; flipFlop:ffKEYR|DOUT                                          ; Stuck at VCC due to stuck port data_in      ;
+; edgeDetector:detectorSubR|saidaQ                              ; Lost fanout                                 ;
+; flipFlop:ffKEY3|DOUT                                          ; Stuck at VCC due to stuck port data_in      ;
+; edgeDetector:detectorSub3|saidaQ                              ; Lost fanout                                 ;
+; flipFlop:ffKEY2|DOUT                                          ; Stuck at VCC due to stuck port data_in      ;
+; edgeDetector:detectorSub2|saidaQ                              ; Lost fanout                                 ;
+; flipFlop:ffKEY1|DOUT                                          ; Stuck at VCC due to stuck port data_in      ;
+; edgeDetector:detectorSub1|saidaQ                              ; Lost fanout                                 ;
+; flipFlop:ffKEY0|DOUT                                          ; Stuck at VCC due to stuck port data_in      ;
+; registradorGenerico:RegHex5|DOUT[0..3]                        ; Stuck at GND due to stuck port clock_enable ;
+; registradorGenerico:RegHex4|DOUT[0..3]                        ; Stuck at GND due to stuck port clock_enable ;
+; registradorGenerico:RegHex3|DOUT[0..3]                        ; Stuck at GND due to stuck port clock_enable ;
+; registradorGenerico:RegHex2|DOUT[0..3]                        ; Stuck at GND due to stuck port clock_enable ;
+; registradorGenerico:RegHex1|DOUT[0..3]                        ; Stuck at GND due to stuck port clock_enable ;
+; registradorGenerico:RegHex0|DOUT[0..3]                        ; Stuck at GND due to stuck port clock_enable ;
+; flipFlop:ffLed9|DOUT                                          ; Stuck at GND due to stuck port clock_enable ;
+; flipFlop:ffLed8|DOUT                                          ; Stuck at GND due to stuck port clock_enable ;
+; registradorGenerico:RegLed7|DOUT[0..7]                        ; Stuck at GND due to stuck port clock_enable ;
+; processador:processador|flipFlop:flipFlop|DOUT                ; Lost fanout                                 ;
+; processador:processador|flipFlop:flipFlop2|DOUT               ; Lost fanout                                 ;
+; processador:processador|registradorGenerico:regRet|DOUT[0..8] ; Stuck at GND due to stuck port clock_enable ;
+; divisorGenerico:divisorA|contador[0,1]                        ; Lost fanout                                 ;
+; divisorGenerico:divisorA|tick                                 ; Lost fanout                                 ;
+; divisorGenerico:divisorA|contador[2..16]                      ; Lost fanout                                 ;
+; divisorGenerico:divisorN|contador[0..7]                       ; Lost fanout                                 ;
+; divisorGenerico:divisorN|tick                                 ; Lost fanout                                 ;
+; divisorGenerico:divisorN|contador[8..24]                      ; Lost fanout                                 ;
+; processador:processador|registradorGenerico:PC|DOUT[0..8]     ; Lost fanout                                 ;
+; Total Number of Removed Registers = 107                       ;                                             ;
++---------------------------------------------------------------+---------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                    ;
++------------------------------------------------------------+--------------------------------+----------------------------------------------------------------------------------+
+; Register name                                              ; Reason for Removal             ; Registers Removed due to This Register                                           ;
++------------------------------------------------------------+--------------------------------+----------------------------------------------------------------------------------+
+; flipFlop:ffKEYR|DOUT                                       ; Stuck at VCC                   ; edgeDetector:detectorSubR|saidaQ, registradorGenerico:RegHex5|DOUT[3],           ;
+;                                                            ; due to stuck port data_in      ; registradorGenerico:RegHex5|DOUT[2], registradorGenerico:RegHex5|DOUT[1],        ;
+;                                                            ;                                ; registradorGenerico:RegHex5|DOUT[0], registradorGenerico:RegHex4|DOUT[3],        ;
+;                                                            ;                                ; registradorGenerico:RegHex4|DOUT[2], registradorGenerico:RegHex4|DOUT[1],        ;
+;                                                            ;                                ; registradorGenerico:RegHex4|DOUT[0], registradorGenerico:RegHex3|DOUT[3],        ;
+;                                                            ;                                ; registradorGenerico:RegHex3|DOUT[2], registradorGenerico:RegHex3|DOUT[1],        ;
+;                                                            ;                                ; registradorGenerico:RegHex3|DOUT[0], registradorGenerico:RegHex2|DOUT[3],        ;
+;                                                            ;                                ; registradorGenerico:RegHex2|DOUT[2], registradorGenerico:RegHex2|DOUT[1],        ;
+;                                                            ;                                ; registradorGenerico:RegHex2|DOUT[0], registradorGenerico:RegHex1|DOUT[3],        ;
+;                                                            ;                                ; registradorGenerico:RegHex1|DOUT[2], registradorGenerico:RegHex1|DOUT[1],        ;
+;                                                            ;                                ; registradorGenerico:RegHex1|DOUT[0], registradorGenerico:RegHex0|DOUT[3],        ;
+;                                                            ;                                ; registradorGenerico:RegHex0|DOUT[2], registradorGenerico:RegHex0|DOUT[1],        ;
+;                                                            ;                                ; registradorGenerico:RegHex0|DOUT[0], flipFlop:ffLed9|DOUT, flipFlop:ffLed8|DOUT, ;
+;                                                            ;                                ; registradorGenerico:RegLed7|DOUT[4], registradorGenerico:RegLed7|DOUT[3],        ;
+;                                                            ;                                ; registradorGenerico:RegLed7|DOUT[2], registradorGenerico:RegLed7|DOUT[1],        ;
+;                                                            ;                                ; registradorGenerico:RegLed7|DOUT[0],                                             ;
+;                                                            ;                                ; processador:processador|registradorGenerico:PC|DOUT[0]                           ;
+; divisorGenerico:divisorN|contador[7]                       ; Lost Fanouts                   ; divisorGenerico:divisorN|contador[6], divisorGenerico:divisorN|contador[5],      ;
+;                                                            ;                                ; divisorGenerico:divisorN|contador[4], divisorGenerico:divisorN|contador[3],      ;
+;                                                            ;                                ; divisorGenerico:divisorN|contador[2], divisorGenerico:divisorN|contador[1],      ;
+;                                                            ;                                ; divisorGenerico:divisorN|contador[0], divisorGenerico:divisorN|contador[8],      ;
+;                                                            ;                                ; divisorGenerico:divisorN|contador[9], divisorGenerico:divisorN|contador[10],     ;
+;                                                            ;                                ; divisorGenerico:divisorN|contador[11], divisorGenerico:divisorN|contador[12]     ;
+; flipFlop:ffKEY0|DOUT                                       ; Stuck at VCC                   ; divisorGenerico:divisorA|tick, divisorGenerico:divisorA|contador[7],             ;
+;                                                            ; due to stuck port data_in      ; divisorGenerico:divisorA|contador[8], divisorGenerico:divisorA|contador[9],      ;
+;                                                            ;                                ; divisorGenerico:divisorA|contador[10], divisorGenerico:divisorN|tick,            ;
+;                                                            ;                                ; divisorGenerico:divisorN|contador[13], divisorGenerico:divisorN|contador[14],    ;
+;                                                            ;                                ; divisorGenerico:divisorN|contador[15], divisorGenerico:divisorN|contador[16]     ;
+; divisorGenerico:divisorA|contador[1]                       ; Lost Fanouts                   ; divisorGenerico:divisorA|contador[0], divisorGenerico:divisorA|contador[2],      ;
+;                                                            ;                                ; divisorGenerico:divisorA|contador[3], divisorGenerico:divisorA|contador[4],      ;
+;                                                            ;                                ; divisorGenerico:divisorA|contador[5], divisorGenerico:divisorA|contador[6]       ;
+; processador:processador|flipFlop:flipFlop|DOUT             ; Lost Fanouts                   ; processador:processador|registradorGenerico:PC|DOUT[3],                          ;
+;                                                            ;                                ; processador:processador|registradorGenerico:PC|DOUT[2],                          ;
+;                                                            ;                                ; processador:processador|registradorGenerico:PC|DOUT[1]                           ;
+; flipFlop:ffKEY3|DOUT                                       ; Stuck at VCC                   ; edgeDetector:detectorSub3|saidaQ                                                 ;
+;                                                            ; due to stuck port data_in      ;                                                                                  ;
+; flipFlop:ffKEY2|DOUT                                       ; Stuck at VCC                   ; edgeDetector:detectorSub2|saidaQ                                                 ;
+;                                                            ; due to stuck port data_in      ;                                                                                  ;
+; flipFlop:ffKEY1|DOUT                                       ; Stuck at VCC                   ; edgeDetector:detectorSub1|saidaQ                                                 ;
+;                                                            ; due to stuck port data_in      ;                                                                                  ;
+; processador:processador|flipFlop:flipFlop2|DOUT            ; Lost Fanouts                   ; processador:processador|registradorGenerico:PC|DOUT[4]                           ;
+; processador:processador|registradorGenerico:regRet|DOUT[8] ; Stuck at GND                   ; processador:processador|registradorGenerico:PC|DOUT[5]                           ;
+;                                                            ; due to stuck port clock_enable ;                                                                                  ;
++------------------------------------------------------------+--------------------------------+----------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -324,25 +376,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 583   ;
+; Total registers                              ; 0     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 5     ;
+; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 561   ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
-; 3:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |Aula_9|processador:processador|registradorGenerico:PC|DOUT[7]   ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |Aula_9|processador:processador|registradorGenerico:REGA|DOUT[3] ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |Aula_9|processador:processador|muxGenerico2x1:MUX1|saida_MUX[7] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------+
@@ -364,7 +405,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+-------------------------------------+
 ; Parameter Name ; Value ; Type                                ;
 +----------------+-------+-------------------------------------+
-; datawidth      ; 13    ; Signed Integer                      ;
+; datawidth      ; 16    ; Signed Integer                      ;
 ; addrwidth      ; 9     ; Signed Integer                      ;
 +----------------+-------+-------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
@@ -413,13 +454,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: processador:processador|registradorGenerico:REGA ;
-+----------------+-------+----------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                 ;
-+----------------+-------+----------------------------------------------------------------------+
-; larguradados   ; 8     ; Signed Integer                                                       ;
-+----------------+-------+----------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processador:processador|bancoRegistradoresArqRegMem:bancoReg ;
++---------------------+-------+-----------------------------------------------------------------------------+
+; Parameter Name      ; Value ; Type                                                                        ;
++---------------------+-------+-----------------------------------------------------------------------------+
+; larguradados        ; 8     ; Signed Integer                                                              ;
+; larguraendbancoregs ; 3     ; Signed Integer                                                              ;
++---------------------+-------+-----------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -532,6 +574,36 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+-------------------------------------------------+
 ; larguradados   ; 4     ; Signed Integer                                  ;
 +----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: divisorGenerico:divisorN ;
++----------------+----------+-------------------------------------------+
+; Parameter Name ; Value    ; Type                                      ;
++----------------+----------+-------------------------------------------+
+; divisor        ; 25000000 ; Signed Integer                            ;
++----------------+----------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: divisorGenerico:divisorA ;
++----------------+--------+---------------------------------------------+
+; Parameter Name ; Value  ; Type                                        ;
++----------------+--------+---------------------------------------------+
+; divisor        ; 100000 ; Signed Integer                              ;
++----------------+--------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: muxGenerico2x1:muxClock ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -751,6 +823,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "processador:processador|flipFlop:flipFlop2" ;
++------+-------+----------+----------------------------------------------+
+; Port ; Type  ; Severity ; Details                                      ;
++------+-------+----------+----------------------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                                 ;
++------+-------+----------+----------------------------------------------+
+
+
 +-----------------------------------------------------------------------+
 ; Port Connectivity Checks: "processador:processador|flipFlop:flipFlop" ;
 +------+-------+----------+---------------------------------------------+
@@ -778,15 +859,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------+-------+----------+------------------------------------------------+
 
 
-+------------------------------------------------------------------------------+
-; Port Connectivity Checks: "processador:processador|registradorGenerico:REGA" ;
-+------+-------+----------+----------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                            ;
-+------+-------+----------+----------------------------------------------------+
-; rst  ; Input ; Info     ; Stuck at GND                                       ;
-+------+-------+----------+----------------------------------------------------+
-
-
 +---------------------------------------------------------------------------+
 ; Port Connectivity Checks: "processador:processador|muxGenerico4x1:MUXJMP" ;
 +--------------+-------+----------+-----------------------------------------+
@@ -810,29 +882,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 583                         ;
-;     CLR               ; 5                           ;
-;     ENA               ; 561                         ;
-;     plain             ; 17                          ;
-; arriav_lcell_comb     ; 575                         ;
-;     arith             ; 26                          ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 9                           ;
-;         2 data inputs ; 10                          ;
-;         4 data inputs ; 6                           ;
-;     extend            ; 13                          ;
-;         7 data inputs ; 13                          ;
-;     normal            ; 536                         ;
-;         1 data inputs ; 5                           ;
-;         2 data inputs ; 72                          ;
-;         3 data inputs ; 9                           ;
-;         4 data inputs ; 58                          ;
-;         5 data inputs ; 35                          ;
-;         6 data inputs ; 357                         ;
+; arriav_lcell_comb     ; 2                           ;
+;     normal            ; 2                           ;
+;         0 data inputs ; 2                           ;
 ; boundary_port         ; 68                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 10.30                       ;
-; Average LUT depth     ; 6.79                        ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
 +-----------------------+-----------------------------+
 
 
@@ -841,7 +897,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -851,105 +907,188 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Fri Oct 21 14:53:46 2022
+    Info: Processing started: Fri Nov 04 14:40:15 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Aula_9 -c Aula_9
-Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file muxGenerico4x1.vhd
-    Info (12022): Found design unit 1: muxGenerico4x1-comportamento File: /home/osboxes/DesComp/Aula_9/muxGenerico4x1.vhd Line: 14
-    Info (12023): Found entity 1: muxGenerico4x1 File: /home/osboxes/DesComp/Aula_9/muxGenerico4x1.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file muxGenerico2x1.vhd
-    Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: /home/osboxes/DesComp/Aula_9/muxGenerico2x1.vhd Line: 14
-    Info (12023): Found entity 1: muxGenerico2x1 File: /home/osboxes/DesComp/Aula_9/muxGenerico2x1.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file logicDesvio.vhd
-    Info (12022): Found design unit 1: logicDesvio-comportamento File: /home/osboxes/DesComp/Aula_9/logicDesvio.vhd Line: 14
-    Info (12023): Found entity 1: logicDesvio File: /home/osboxes/DesComp/Aula_9/logicDesvio.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file memoriaROM.vhd
-    Info (12022): Found design unit 1: memoriaROM-assincrona File: /home/osboxes/DesComp/Aula_9/memoriaROM.vhd Line: 16
-    Info (12023): Found entity 1: memoriaROM File: /home/osboxes/DesComp/Aula_9/memoriaROM.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file ULASomaSub.vhd
-    Info (12022): Found design unit 1: ULASomaSub-comportamento File: /home/osboxes/DesComp/Aula_9/ULASomaSub.vhd Line: 17
-    Info (12023): Found entity 1: ULASomaSub File: /home/osboxes/DesComp/Aula_9/ULASomaSub.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file flipFlop.vhd
-    Info (12022): Found design unit 1: flipFlop-comportamento File: /home/osboxes/DesComp/Aula_9/flipFlop.vhd Line: 12
-    Info (12023): Found entity 1: flipFlop File: /home/osboxes/DesComp/Aula_9/flipFlop.vhd Line: 4
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file muxgenerico4x1.vhd
+    Info (12022): Found design unit 1: muxGenerico4x1-comportamento File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/muxGenerico4x1.vhd Line: 14
+    Info (12023): Found entity 1: muxGenerico4x1 File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/muxGenerico4x1.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file muxgenerico2x1.vhd
+    Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/muxGenerico2x1.vhd Line: 14
+    Info (12023): Found entity 1: muxGenerico2x1 File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/muxGenerico2x1.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file logicdesvio.vhd
+    Info (12022): Found design unit 1: logicDesvio-comportamento File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/logicDesvio.vhd Line: 16
+    Info (12023): Found entity 1: logicDesvio File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/logicDesvio.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file memoriarom.vhd
+    Info (12022): Found design unit 1: memoriaROM-assincrona File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/memoriaROM.vhd Line: 16
+    Info (12023): Found entity 1: memoriaROM File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/memoriaROM.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file ulasomasub.vhd
+    Info (12022): Found design unit 1: ULASomaSub-comportamento File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/ULASomaSub.vhd Line: 18
+    Info (12023): Found entity 1: ULASomaSub File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/ULASomaSub.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file flipflop.vhd
+    Info (12022): Found design unit 1: flipFlop-comportamento File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/flipFlop.vhd Line: 12
+    Info (12023): Found entity 1: flipFlop File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/flipFlop.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file buffer_3_state_8portas.vhd
-    Info (12022): Found design unit 1: buffer_3_state_8portas-comportamento File: /home/osboxes/DesComp/Aula_9/buffer_3_state_8portas.vhd Line: 11
-    Info (12023): Found entity 1: buffer_3_state_8portas File: /home/osboxes/DesComp/Aula_9/buffer_3_state_8portas.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file conversorHex7Seg.vhd
-    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: /home/osboxes/DesComp/Aula_9/conversorHex7Seg.vhd Line: 17
-    Info (12023): Found entity 1: conversorHex7Seg File: /home/osboxes/DesComp/Aula_9/conversorHex7Seg.vhd Line: 4
-Info (12021): Found 3 design units, including 1 entities, in source file edgeDetector.vhd
-    Info (12022): Found design unit 1: edgeDetector-bordaSubida File: /home/osboxes/DesComp/Aula_9/edgeDetector.vhd Line: 10
-    Info (12022): Found design unit 2: edgeDetector-bordaDescida File: /home/osboxes/DesComp/Aula_9/edgeDetector.vhd Line: 23
-    Info (12023): Found entity 1: edgeDetector File: /home/osboxes/DesComp/Aula_9/edgeDetector.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file somaConstante.vhd
-    Info (12022): Found design unit 1: somaConstante-comportamento File: /home/osboxes/DesComp/Aula_9/somaConstante.vhd Line: 18
-    Info (12023): Found entity 1: somaConstante File: /home/osboxes/DesComp/Aula_9/somaConstante.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file Aula_9.vhd
-    Info (12022): Found design unit 1: Aula_9-arquitetura File: /home/osboxes/DesComp/Aula_9/Aula_9.vhd Line: 37
-    Info (12023): Found entity 1: Aula_9 File: /home/osboxes/DesComp/Aula_9/Aula_9.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file decoderInstru.vhd
-    Info (12022): Found design unit 1: decoderInstru-comportamento File: /home/osboxes/DesComp/Aula_9/decoderInstru.vhd Line: 10
-    Info (12023): Found entity 1: decoderInstru File: /home/osboxes/DesComp/Aula_9/decoderInstru.vhd Line: 4
+    Info (12022): Found design unit 1: buffer_3_state_8portas-comportamento File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/buffer_3_state_8portas.vhd Line: 11
+    Info (12023): Found entity 1: buffer_3_state_8portas File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/buffer_3_state_8portas.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file conversorhex7seg.vhd
+    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/conversorHex7Seg.vhd Line: 17
+    Info (12023): Found entity 1: conversorHex7Seg File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/conversorHex7Seg.vhd Line: 4
+Info (12021): Found 3 design units, including 1 entities, in source file edgedetector.vhd
+    Info (12022): Found design unit 1: edgeDetector-bordaSubida File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/edgeDetector.vhd Line: 10
+    Info (12022): Found design unit 2: edgeDetector-bordaDescida File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/edgeDetector.vhd Line: 23
+    Info (12023): Found entity 1: edgeDetector File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/edgeDetector.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file somaconstante.vhd
+    Info (12022): Found design unit 1: somaConstante-comportamento File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/somaConstante.vhd Line: 18
+    Info (12023): Found entity 1: somaConstante File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/somaConstante.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file aula_9.vhd
+    Info (12022): Found design unit 1: Aula_9-arquitetura File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 37
+    Info (12023): Found entity 1: Aula_9 File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file decoderinstru.vhd
+    Info (12022): Found design unit 1: decoderInstru-comportamento File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/decoderInstru.vhd Line: 10
+    Info (12023): Found entity 1: decoderInstru File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/decoderInstru.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file buffer_3_state.vhd
-    Info (12022): Found design unit 1: buffer_3_state-comportamento File: /home/osboxes/DesComp/Aula_9/buffer_3_state.vhd Line: 11
-    Info (12023): Found entity 1: buffer_3_state File: /home/osboxes/DesComp/Aula_9/buffer_3_state.vhd Line: 4
+    Info (12022): Found design unit 1: buffer_3_state-comportamento File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/buffer_3_state.vhd Line: 11
+    Info (12023): Found entity 1: buffer_3_state File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/buffer_3_state.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file decoder3x8.vhd
-    Info (12022): Found design unit 1: decoder3x8-comportamento File: /home/osboxes/DesComp/Aula_9/decoder3x8.vhd Line: 10
-    Info (12023): Found entity 1: decoder3x8 File: /home/osboxes/DesComp/Aula_9/decoder3x8.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file muxJmp.vhd
-    Info (12022): Found design unit 1: muxJmp-comportamento File: /home/osboxes/DesComp/Aula_9/muxJmp.vhd Line: 14
-    Info (12023): Found entity 1: muxJmp File: /home/osboxes/DesComp/Aula_9/muxJmp.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file registradorGenerico.vhd
-    Info (12022): Found design unit 1: registradorGenerico-comportamento File: /home/osboxes/DesComp/Aula_9/registradorGenerico.vhd Line: 15
-    Info (12023): Found entity 1: registradorGenerico File: /home/osboxes/DesComp/Aula_9/registradorGenerico.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file memoriaRAM.vhd
-    Info (12022): Found design unit 1: memoriaRAM-rtl File: /home/osboxes/DesComp/Aula_9/memoriaRAM.vhd Line: 21
-    Info (12023): Found entity 1: memoriaRAM File: /home/osboxes/DesComp/Aula_9/memoriaRAM.vhd Line: 5
+    Info (12022): Found design unit 1: decoder3x8-comportamento File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/decoder3x8.vhd Line: 10
+    Info (12023): Found entity 1: decoder3x8 File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/decoder3x8.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file muxjmp.vhd
+    Info (12022): Found design unit 1: muxJmp-comportamento File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/muxJmp.vhd Line: 14
+    Info (12023): Found entity 1: muxJmp File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/muxJmp.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file registradorgenerico.vhd
+    Info (12022): Found design unit 1: registradorGenerico-comportamento File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/registradorGenerico.vhd Line: 15
+    Info (12023): Found entity 1: registradorGenerico File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/registradorGenerico.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file memoriaram.vhd
+    Info (12022): Found design unit 1: memoriaRAM-rtl File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/memoriaRAM.vhd Line: 21
+    Info (12023): Found entity 1: memoriaRAM File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/memoriaRAM.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file processador.vhd
-    Info (12022): Found design unit 1: processador-arquitetura File: /home/osboxes/DesComp/Aula_9/processador.vhd Line: 25
-    Info (12023): Found entity 1: processador File: /home/osboxes/DesComp/Aula_9/processador.vhd Line: 4
+    Info (12022): Found design unit 1: processador-arquitetura File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/processador.vhd Line: 25
+    Info (12023): Found entity 1: processador File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/processador.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file bancoregistradoresarqregmem.vhd
+    Info (12022): Found design unit 1: bancoRegistradoresArqRegMem-comportamento File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/bancoRegistradoresArqRegMem.vhd Line: 23
+    Info (12023): Found entity 1: bancoRegistradoresArqRegMem File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/bancoRegistradoresArqRegMem.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file divisorgenerico.vhd
+    Info (12022): Found design unit 1: divisorGenerico-divInteiro File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/divisorGenerico.vhd Line: 15
+    Info (12023): Found entity 1: divisorGenerico File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/divisorGenerico.vhd Line: 5
 Info (12127): Elaborating entity "Aula_9" for the top level hierarchy
-Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM1" File: /home/osboxes/DesComp/Aula_9/Aula_9.vhd Line: 118
-Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:memoriaRAM" File: /home/osboxes/DesComp/Aula_9/Aula_9.vhd Line: 121
-Info (12128): Elaborating entity "processador" for hierarchy "processador:processador" File: /home/osboxes/DesComp/Aula_9/Aula_9.vhd Line: 125
-Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "processador:processador|muxGenerico2x1:MUX1" File: /home/osboxes/DesComp/Aula_9/processador.vhd Line: 45
-Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "processador:processador|muxGenerico4x1:MUXJMP" File: /home/osboxes/DesComp/Aula_9/processador.vhd Line: 51
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "processador:processador|registradorGenerico:REGA" File: /home/osboxes/DesComp/Aula_9/processador.vhd Line: 59
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "processador:processador|registradorGenerico:PC" File: /home/osboxes/DesComp/Aula_9/processador.vhd Line: 63
-Info (12128): Elaborating entity "somaConstante" for hierarchy "processador:processador|somaConstante:incrementaPC" File: /home/osboxes/DesComp/Aula_9/processador.vhd Line: 66
-Info (12128): Elaborating entity "flipFlop" for hierarchy "processador:processador|flipFlop:flipFlop" File: /home/osboxes/DesComp/Aula_9/processador.vhd Line: 72
-Info (12128): Elaborating entity "ULASomaSub" for hierarchy "processador:processador|ULASomaSub:ULA1" File: /home/osboxes/DesComp/Aula_9/processador.vhd Line: 76
-Info (12128): Elaborating entity "decoderInstru" for hierarchy "processador:processador|decoderInstru:decoderInstru" File: /home/osboxes/DesComp/Aula_9/processador.vhd Line: 79
-Info (12128): Elaborating entity "logicDesvio" for hierarchy "processador:processador|logicDesvio:logicDesvio" File: /home/osboxes/DesComp/Aula_9/processador.vhd Line: 82
-Info (12128): Elaborating entity "decoder3x8" for hierarchy "decoder3x8:decoderBloco" File: /home/osboxes/DesComp/Aula_9/Aula_9.vhd Line: 129
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:RegHex0" File: /home/osboxes/DesComp/Aula_9/Aula_9.vhd Line: 163
-Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "conversorHex7Seg:ConHex0" File: /home/osboxes/DesComp/Aula_9/Aula_9.vhd Line: 181
-Info (12128): Elaborating entity "buffer_3_state_8portas" for hierarchy "buffer_3_state_8portas:BufferSW7" File: /home/osboxes/DesComp/Aula_9/Aula_9.vhd Line: 206
-Info (12128): Elaborating entity "buffer_3_state" for hierarchy "buffer_3_state:BufferSW8" File: /home/osboxes/DesComp/Aula_9/Aula_9.vhd Line: 209
-Info (12129): Elaborating entity "edgeDetector" using architecture "A:bordasubida" for hierarchy "edgeDetector:detectorSub0" File: /home/osboxes/DesComp/Aula_9/Aula_9.vhd Line: 242
-Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276007): RAM logic "memoriaRAM:memoriaRAM|ram" is uninferred due to asynchronous read logic File: /home/osboxes/DesComp/Aula_9/memoriaRAM.vhd Line: 27
+Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM1" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 120
+Warning (10542): VHDL Variable Declaration warning at memoriaROM.vhd(37): used initial value expression for variable "tmp" because variable was never assigned a value File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/memoriaROM.vhd Line: 37
+Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:memoriaRAM" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 123
+Info (12128): Elaborating entity "processador" for hierarchy "processador:processador" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 127
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "processador:processador|muxGenerico2x1:MUX1" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/processador.vhd Line: 47
+Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "processador:processador|muxGenerico4x1:MUXJMP" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/processador.vhd Line: 53
+Info (12128): Elaborating entity "bancoRegistradoresArqRegMem" for hierarchy "processador:processador|bancoRegistradoresArqRegMem:bancoReg" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/processador.vhd Line: 69
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "processador:processador|registradorGenerico:PC" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/processador.vhd Line: 77
+Info (12128): Elaborating entity "somaConstante" for hierarchy "processador:processador|somaConstante:incrementaPC" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/processador.vhd Line: 80
+Info (12128): Elaborating entity "flipFlop" for hierarchy "processador:processador|flipFlop:flipFlop" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/processador.vhd Line: 86
+Info (12128): Elaborating entity "ULASomaSub" for hierarchy "processador:processador|ULASomaSub:ULA1" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/processador.vhd Line: 93
+Info (12128): Elaborating entity "decoderInstru" for hierarchy "processador:processador|decoderInstru:decoderInstru" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/processador.vhd Line: 96
+Info (12128): Elaborating entity "logicDesvio" for hierarchy "processador:processador|logicDesvio:logicDesvio" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/processador.vhd Line: 99
+Info (12128): Elaborating entity "decoder3x8" for hierarchy "decoder3x8:decoderBloco" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 131
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:RegLed7" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 146
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:RegHex0" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 165
+Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "conversorHex7Seg:ConHex0" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 183
+Info (12128): Elaborating entity "buffer_3_state_8portas" for hierarchy "buffer_3_state_8portas:BufferSW7" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 208
+Info (12128): Elaborating entity "buffer_3_state" for hierarchy "buffer_3_state:BufferSW8" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 211
+Info (12128): Elaborating entity "divisorGenerico" for hierarchy "divisorGenerico:divisorN" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 246
+Info (12128): Elaborating entity "divisorGenerico" for hierarchy "divisorGenerico:divisorA" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 250
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "muxGenerico2x1:muxClock" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 254
+Info (12129): Elaborating entity "edgeDetector" using architecture "A:bordasubida" for hierarchy "edgeDetector:detectorSub1" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 267
+Warning (19016): Clock multiplexers are found and protected
+    Warning (19017): Found clock multiplexer muxGenerico2x1:muxClock|saida_MUX[0] File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/muxGenerico2x1.vhd Line: 10
+Info (276014): Found 2 instances of uninferred RAM logic
+    Info (276007): RAM logic "processador:processador|bancoRegistradoresArqRegMem:bancoReg|registrador" is uninferred due to asynchronous read logic File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/bancoRegistradoresArqRegMem.vhd Line: 29
+    Info (276007): RAM logic "memoriaRAM:memoriaRAM|ram" is uninferred due to asynchronous read logic File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/memoriaRAM.vhd Line: 27
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13048): Converted tri-state node "dLeituraRAM[7]" into a selector File: /home/osboxes/DesComp/Aula_9/muxGenerico2x1.vhd Line: 10
-    Warning (13048): Converted tri-state node "dLeituraRAM[6]" into a selector File: /home/osboxes/DesComp/Aula_9/muxGenerico2x1.vhd Line: 10
-    Warning (13048): Converted tri-state node "dLeituraRAM[5]" into a selector File: /home/osboxes/DesComp/Aula_9/muxGenerico2x1.vhd Line: 10
-    Warning (13048): Converted tri-state node "dLeituraRAM[4]" into a selector File: /home/osboxes/DesComp/Aula_9/muxGenerico2x1.vhd Line: 10
-    Warning (13048): Converted tri-state node "dLeituraRAM[3]" into a selector File: /home/osboxes/DesComp/Aula_9/muxGenerico2x1.vhd Line: 10
-    Warning (13048): Converted tri-state node "dLeituraRAM[2]" into a selector File: /home/osboxes/DesComp/Aula_9/muxGenerico2x1.vhd Line: 10
-    Warning (13048): Converted tri-state node "dLeituraRAM[1]" into a selector File: /home/osboxes/DesComp/Aula_9/muxGenerico2x1.vhd Line: 10
-    Warning (13048): Converted tri-state node "dLeituraRAM[0]" into a selector File: /home/osboxes/DesComp/Aula_9/muxGenerico2x1.vhd Line: 10
-Info (286030): Timing-Driven Synthesis is running
+    Warning (13048): Converted tri-state node "dLeituraRAM[7]" into a selector File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "dLeituraRAM[6]" into a selector File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "dLeituraRAM[5]" into a selector File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "dLeituraRAM[4]" into a selector File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "dLeituraRAM[3]" into a selector File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "dLeituraRAM[2]" into a selector File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "dLeituraRAM[1]" into a selector File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "dLeituraRAM[0]" into a selector File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/muxGenerico2x1.vhd Line: 10
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 17
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 17
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 17
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 17
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 17
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 17
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 17
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 17
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 17
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 17
+    Warning (13410): Pin "HEX0[0]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 18
+    Warning (13410): Pin "HEX0[1]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 18
+    Warning (13410): Pin "HEX0[2]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 18
+    Warning (13410): Pin "HEX0[3]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 18
+    Warning (13410): Pin "HEX0[4]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 18
+    Warning (13410): Pin "HEX0[5]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 18
+    Warning (13410): Pin "HEX0[6]" is stuck at VCC File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 18
+    Warning (13410): Pin "HEX1[0]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 19
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 19
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 19
+    Warning (13410): Pin "HEX1[3]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 19
+    Warning (13410): Pin "HEX1[4]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 19
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 19
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 19
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 20
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 20
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 20
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 20
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 20
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 20
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 20
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 21
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 21
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 21
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 21
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 21
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 21
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 21
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 22
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 22
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 22
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 22
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 22
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 22
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 22
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 23
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 23
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 23
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 23
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 23
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 23
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 23
+Info (17049): 59 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1201 device resources after synthesis - the final resource count might be different
+Warning (21074): Design contains 16 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLOCK_50" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 13
+    Warning (15610): No output dependent on input pin "KEY[0]" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 14
+    Warning (15610): No output dependent on input pin "KEY[1]" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 14
+    Warning (15610): No output dependent on input pin "KEY[2]" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 14
+    Warning (15610): No output dependent on input pin "KEY[3]" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 14
+    Warning (15610): No output dependent on input pin "SW[0]" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[1]" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[2]" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[3]" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[4]" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[5]" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[6]" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[7]" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[8]" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[9]" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 15
+    Warning (15610): No output dependent on input pin "FPGA_RESET_N" File: D:/insper/6semestre/desComp/projeto/Relogio_Descomp/Relógio/Aula_9.vhd Line: 16
+Info (21057): Implemented 68 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 16 input pins
     Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 1133 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 516 megabytes
-    Info: Processing ended: Fri Oct 21 14:55:17 2022
-    Info: Elapsed time: 00:01:31
-    Info: Total CPU time (on all processors): 00:00:22
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 82 warnings
+    Info: Peak virtual memory: 4857 megabytes
+    Info: Processing ended: Fri Nov 04 14:40:28 2022
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:30
 
 

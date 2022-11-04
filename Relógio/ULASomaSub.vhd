@@ -10,7 +10,8 @@ entity ULASomaSub is
       entradaA, entradaB:  in STD_LOGIC_VECTOR((larguraDados-1) downto 0);
       seletor:  in STD_LOGIC_VECTOR((tamanhoCommando-1) downto 0);
       saida:    out STD_LOGIC_VECTOR((larguraDados-1) downto 0);
-		flag_Z: out STD_LOGIC
+		flag_Z: out STD_LOGIC;
+		flag_G: out STD_LOGIC
     );
 end entity;
 
@@ -19,16 +20,19 @@ architecture comportamento of ULASomaSub is
    signal subtracao : STD_LOGIC_VECTOR((larguraDados-1) downto 0);
 	signal passa :     STD_LOGIC_VECTOR((larguraDados-1) downto 0);
 	signal andI :     STD_LOGIC_VECTOR((larguraDados-1) downto 0);
+	signal greater :	STD_LOGIC_VECTOR((larguraDados-1) downto 0);
 	
    begin
       soma      <= STD_LOGIC_VECTOR(unsigned(entradaA) + unsigned(entradaB));
       subtracao <= STD_LOGIC_VECTOR(unsigned(entradaA) - unsigned(entradaB));
 		passa 	 <= STD_LOGIC_VECTOR(unsigned(entradaB));
 		andI      <= STD_LOGIC_VECTOR(unsigned(entradaA) and unsigned(entradaB));
+		greater   <= STD_LOGIC_VECTOR(signed(entradaA) - signed(entradaB));
 		
       saida <= soma when (seletor = "01") else 
 					subtracao when (seletor = "00") else
 					andI when (seletor = "11") else
 					passa;
 		flag_Z <= '1' when (subtracao = "00000000") else '0';
+		flag_G <= '1' when (greater(7) = '0') else '0';
 end architecture;

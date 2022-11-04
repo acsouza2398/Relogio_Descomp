@@ -40,7 +40,9 @@ architecture arquitetura of Aula_9 is
   signal proc_out : std_logic_vector (larguraDados-1 downto 0);
   signal Endereco : std_logic_vector (larguraEnderecos-1 downto 0);
   signal CLK : std_logic;
+  signal clk_mux : std_logic;
   signal clk_KEY0 : std_logic;
+  signal clk_KEY0A : std_logic;
   signal clk_KEY1 : std_logic;
   signal clk_KEY2 : std_logic;
   signal clk_KEY3 : std_logic;
@@ -49,7 +51,7 @@ architecture arquitetura of Aula_9 is
   signal endSaida : std_logic_vector (7 downto 0);
   signal blocoHabLed : std_logic;
   signal addr: std_logic_vector (8 downto 0);
-  signal instruction : std_logic_vector (12 downto 0);
+  signal instruction : std_logic_vector (15 downto 0);
   signal ligaLed7 : std_logic_vector (7 downto 0);
   signal ligaLed8 : std_logic;
   signal ligaLed9 : std_logic;
@@ -115,7 +117,7 @@ CLK <= CLOCK_50;
 
 -- Componentes
 
-ROM1 : entity work.memoriaROM   generic map (dataWidth => 13, addrWidth => 9)
+ROM1 : entity work.memoriaROM   generic map (dataWidth => 16, addrWidth => 9)
           port map (Endereco => Endereco, Dado => instruction);
 					  
 memoriaRAM : entity work.memoriaRAM   generic map (dataWidth => 8, addrWidth => 8)
@@ -239,10 +241,24 @@ BufferRESET :  entity work.buffer_3_state
 
 		-- Debounce KEY0
 
-detectorSub0: work.edgeDetector(bordaSubida) port map (clk => CLOCK_50, entrada => (not KEY(0)), saida => clk_KEY0);
+-- detectorSub0: work.edgeDetector(bordaSubida) port map (clk => CLOCK_50, entrada => (not KEY(0)), saida => clk_KEY0);
+
+divisorN : entity work.divisorGenerico
+            generic map (divisor => 25000000)   -- divide por 25M.
+            port map (clk => CLOCK_50, saida_clk => clk_KEY0);
+				
+divisorA : entity work.divisorGenerico
+            generic map (divisor => 100000)   -- divide por 25M.
+            port map (clk => CLOCK_50, saida_clk => clk_KEY0A);
+				
+muxClock :  entity work.muxGenerico2x1 generic map (larguraDados => 1)
+        port map( entradaA_MUX(0) => clk_KEY0,
+                 entradaB_MUX(0) =>  clk_KEY0A,
+                 seletor_MUX => not KEY(0),
+                 saida_MUX(0) => clk_mux);
 
 ffKEY0 : entity work.flipFlop
-          port map (DIN => '1', DOUT => entradaKEY0, ENABLE => '1', CLK => clk_KEY0, RST => limpaLeitura);
+          port map (DIN => '1', DOUT => entradaKEY0, ENABLE => '1', CLK => clk_mux, RST => limpaLeitura);
 			 
 limpaLeitura <= addr(0) AND addr(1) AND addr(2) AND addr(3) AND addr(4) AND addr(5) AND addr(6) AND addr(7) AND addr(8) AND habEscritaMEM;
 
