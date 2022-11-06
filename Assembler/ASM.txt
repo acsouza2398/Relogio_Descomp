@@ -130,6 +130,7 @@ HDezena :
 STA @HUNI, R7 #Zera unidade da hora
 LDA @HDEC, R0 #Carrega dezena da hora em R0
 ADDI $1, R0 #Soma 1 com R0
+STA @HDEC, R0 #Carrega dezena da hora em R0
 RET #Retornar
 
 Limite :
