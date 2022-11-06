@@ -44,7 +44,7 @@ architecture comportamento of decoderInstru is
   begin
   
   habEscritaMEM <= '1' when (opcode = STA) else '0';
-  habLeituraMEM <= '1' when (opcode = LDA) or (opcode = SOMA) or (opcode = SUB) or (opcode = CEQ) or (opcode = ANDI) else '0';
+  habLeituraMEM <= '1' when (opcode = LDA) or (opcode = SOMA) or (opcode = SUB) or (opcode = CEQ) or (opcode = CGT) or (opcode = ANDI) else '0';
   habFlagIgual <= '1' when (opcode = CEQ) else '0';
   operacao <= "01" when (opcode = SOMA) or (opcode = ADDI) else "00" when (opcode = SUB) or (opcode = SUBI) else "11" when (opcode = ANDI) else "10";
   habA <= '1' when (opcode = LDA) or (opcode = SOMA) or (opcode = SUB) or (opcode = LDI) or (opcode = ANDI) or (opcode = SUBI) or (opcode = ADDI) else '0';

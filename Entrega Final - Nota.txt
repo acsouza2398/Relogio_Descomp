@@ -1,0 +1,12 @@
+Cálculo Nota
+
+Base: C
+
+Assembler Feito
+Total: C+
+
+Ajuste de horario sem frequencia
+Total: B
+
+Instrução Nova - CGT, JGT, ADDI, SUBI
+Total: A+
