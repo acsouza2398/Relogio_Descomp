@@ -134,44 +134,6 @@ RET #Retornar
 
 Limite :
 STA @CLR1, R7 #Limpar KEY1
-LDI $1, R0
-STA @LEDR7, R0 #Liga LEDR0 pra indicar aguardando leitura
-
-LimiteSUni :
-STA @CLR1, R7 #Limpar KEY1
-LDA @SW7, R1 #Leitura do SW0-7
-ANDI @15, R1 #Aplicar mascara a leitura do botao para só pegar SW(3 downto 0)
-CGT @VAR10, R1 #Verificar overflow do HEX
-JGT @LimiteSUniMax 
-PosLimiteSUni :
-STA @SUNI, R1 #Guarda na memoria valor da unidade do segundo
-STA @HEX0, R1 #Carrega leitura do SW0-7 no HEX0
-LDA @KEY1, R0 #Ler KEY1
-ANDI @1, R0 #Aplicar máscara a leitura da KEY
-CEQ @VAR1, R0 #Ve se KEY1 está apertado
-STA @CLR1, R7 #Limpar KEY1
-JEQ @PosLSU #Se tiver, guarda e vai embora
-JMP @LimiteSUni #Caso contrario, faz de novo
-PosLSU :
-LDI $2, R0
-STA @LEDR7, R0 #Liga LEDR1 pra indicar aguardando leitura
-
-LimiteSDec :
-STA @CLR1, R7 #Limpar KEY1
-LDA @SW7, R1 #Leitura do SW0-7
-ANDI @5, R1 #Aplicar mascara a leitura do botao para só pegar SW(2 downto 0)
-CGT @VAR6, R1 #Verificar overflow do HEX
-JGT @LimiteSDecMax 
-PosLimiteSDec :
-STA @SDEC, R1 #Guarda na memoria valor da dezena do segundo
-STA @HEX1, R1 #Carrega leitura do SW0-7 no HEX1
-LDA @KEY1, R0 #Ler KEY1
-ANDI @1, R0 #Aplicar máscara a leitura da KEY
-CEQ @VAR1, R0 #Ve se KEY1 está apertado
-STA @CLR1, R7 #Limpar KEY1
-JEQ @PosLSD #Se tiver, guarda e vai embora
-JMP @LimiteSDec #Caso contrario, faz de novo
-PosLSD :
 LDI $4, R0
 STA @LEDR7, R0 #Liga LEDR2 pra indicar aguardando leitura
 
@@ -197,7 +159,7 @@ STA @LEDR7, R0 #Liga LEDR3 pra indicar aguardando leitura
 LimiteMDec :
 STA @CLR1, R7 #Limpar KEY1
 LDA @SW7, R1 #Leitura do SW0-7
-ANDI @5, R1 #Aplicar mascara a leitura do botao para só pegar SW(2 downto 0)
+ANDI @7, R1 #Aplicar mascara a leitura do botao para só pegar SW(2 downto 0)
 CGT @VAR6, R1 #Verificar overflow do HEX
 JGT @LimiteMDecMax 
 PosLimiteMDec :
@@ -231,16 +193,16 @@ JMP @LimiteHUni #Caso contrario, faz de novo
 PosLHU :
 LDI $32, R0
 STA @LEDR7, R0 #Liga LEDR5 pra indicar aguardando leitura
-STA @HUNI, R2 #Verificar unidade da hora -> se for maior que 4, nao pode colocar 2 na hora
-CGT @VAR5, R2 #Verificar overflow do HEX
+LDA @HUNI, R0 #Verificar unidade da hora -> se for maior que 4, nao pode colocar 2 na hora
+CGT @VAR4, R0 #Verificar overflow do HEX
 JGT @LimiteHDecRestringe 
 
 LimiteHDec :
 STA @CLR1, R7 #Limpar KEY1
 LDA @SW7, R1 #Leitura do SW0-7
-ANDI @2, R1 #Aplicar mascara a leitura do botao para só pegar SW(3 downto 0)
-CGT @VAR3, R1 #Verificar overflow do HEX
-JGT @LimiteHDecMax 
+ANDI @3, R1 #Aplicar mascara a leitura do botao para só pegar SW(1 downto 0)
+CEQ @VAR3, R1 #Verificar overflow do HEX
+JEQ @LimiteHDecMax 
 PosLimiteHDec :
 STA @HDEC, R1 #Guarda na memoria valor da unidade da hora
 STA @HEX5, R1 #Carrega leitura do SW0-7 no HEX4
@@ -271,14 +233,6 @@ PosLHDR :
 STA @LEDR7, R7 #Desliga LEDR0-7
 
 RET
-
-LimiteSUniMax :
-LDI $9, R1 #Carrega 9 no R1
-JMP @PosLimiteSUni #Volta
-
-LimiteSDecMax :
-LDI $5, R1 #Carrega 5 no R1
-JMP @PosLimiteSDec #Volta
 
 LimiteMUniMax :
 LDI $9, R1 #Carrega 9 no R1
@@ -318,7 +272,7 @@ JEQ @VerificarHUni #Se estiver no limite, checar dezena de milhar
 RET
 VerificarHUni :
 LDA @HUNI, R3 #Carrega valor da dezena de milhar
-CEQ @VAR4, R3 #Compara dezena de milhar com o limite
+CEQ @VAR3, R3 #Compara dezena de milhar com o limite
 JEQ @VerificarHDec #Se estiver no limite, checar centena de milhar
 RET
 VerificarHDec :

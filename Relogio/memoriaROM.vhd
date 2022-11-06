@@ -37,6 +37,7 @@ architecture assincrona of memoriaROM is
         return blocoMemoria is variable tmp : blocoMemoria := (others => (others => '0'));
   begin
 			
+
 -- Setup 
 tmp(0) := "0100" & "111" & "000000000";	-- LDI $0, R7
 tmp(1) := "0101" & "111" & "100100000";	-- STA @HEX0, R7 	#Limpando os 7 segmentos
@@ -89,7 +90,7 @@ tmp(43) := "1000" & "000" & "000000111";	-- CEQ @VAR1, R0 	#Comparar com 1
 tmp(44) := "0111" & "000" & "000111101";	-- JEQ @HubLimite 	#Pular pra subrotina de limite
 
 -- PosLimite 
-tmp(45) := "1001" & "000" & "011011111";	-- JSR @Verificar 	#Pular pra subrotina de verificar limite
+tmp(45) := "1001" & "000" & "010111101";	-- JSR @Verificar 	#Pular pra subrotina de verificar limite
 tmp(46) := "0001" & "000" & "000000000";	-- LDA @SUNI, R0 	#Carrega acumulador com valor da unidade dos segundos
 tmp(47) := "0101" & "000" & "100100000";	-- STA @HEX0, R0 	#Carrega unidade no HEX0
 tmp(48) := "0001" & "000" & "000000001";	-- LDA @SDEC, R0 	#Carrega acumulador com valor da dezena dos segundos
@@ -165,226 +166,175 @@ tmp(101) := "1010" & "000" & "000000000";	-- RET 	#Retornar
 
 -- Limite 
 tmp(102) := "0101" & "111" & "111111110";	-- STA @CLR1, R7 	#Limpar KEY1
-tmp(103) := "0100" & "000" & "000000001";	-- LDI $1, R0
-tmp(104) := "0101" & "000" & "100000000";	-- STA @LEDR7, R0 	#Liga LEDR0 pra indicar aguardando leitura
+tmp(103) := "0100" & "000" & "000000100";	-- LDI $4, R0
+tmp(104) := "0101" & "000" & "100000000";	-- STA @LEDR7, R0 	#Liga LEDR2 pra indicar aguardando leitura
 
--- LimiteSUni 
+-- LimiteMUni 
 tmp(105) := "0101" & "111" & "111111110";	-- STA @CLR1, R7 	#Limpar KEY1
 tmp(106) := "0001" & "001" & "101000000";	-- LDA @SW7, R1 	#Leitura do SW0-7
 tmp(107) := "1011" & "001" & "000001111";	-- ANDI @15, R1 	#Aplicar mascara a leitura do botao para só pegar SW(3 downto 0)
 tmp(108) := "1100" & "001" & "000001000";	-- CGT @VAR10, R1 	#Verificar overflow do HEX
-tmp(109) := "1101" & "000" & "011010011";	-- JGT @LimiteSUniMax 
+tmp(109) := "1101" & "000" & "010110101";	-- JGT @LimiteMUniMax 
 
--- PosLimiteSUni 
-tmp(110) := "0101" & "001" & "000000000";	-- STA @SUNI, R1 	#Guarda na memoria valor da unidade do segundo
-tmp(111) := "0101" & "001" & "100100000";	-- STA @HEX0, R1 	#Carrega leitura do SW0-7 no HEX0
+-- PosLimiteMUni 
+tmp(110) := "0101" & "001" & "000000010";	-- STA @MUNI, R1 	#Guarda na memoria valor da unidade dos minutos
+tmp(111) := "0101" & "001" & "100100010";	-- STA @HEX2, R1 	#Carrega leitura do SW0-7 no HEX2
 tmp(112) := "0001" & "000" & "101100001";	-- LDA @KEY1, R0 	#Ler KEY1
 tmp(113) := "1011" & "000" & "000000001";	-- ANDI @1, R0 	#Aplicar máscara a leitura da KEY
 tmp(114) := "1000" & "000" & "000000111";	-- CEQ @VAR1, R0 	#Ve se KEY1 está apertado
 tmp(115) := "0101" & "111" & "111111110";	-- STA @CLR1, R7 	#Limpar KEY1
-tmp(116) := "0111" & "000" & "001110110";	-- JEQ @PosLSU 	#Se tiver, guarda e vai embora
-tmp(117) := "0110" & "000" & "001101001";	-- JMP @LimiteSUni 	#Caso contrario, faz de novo
+tmp(116) := "0111" & "000" & "001110110";	-- JEQ @PosLMU 	#Se tiver, guarda e vai embora
+tmp(117) := "0110" & "000" & "001101001";	-- JMP @LimiteMUni 	#Caso contrario, faz de novo
 
--- PosLSU 
-tmp(118) := "0100" & "000" & "000000010";	-- LDI $2, R0
-tmp(119) := "0101" & "000" & "100000000";	-- STA @LEDR7, R0 	#Liga LEDR1 pra indicar aguardando leitura
+-- PosLMU 
+tmp(118) := "0100" & "000" & "000001000";	-- LDI $8, R0
+tmp(119) := "0101" & "000" & "100000000";	-- STA @LEDR7, R0 	#Liga LEDR3 pra indicar aguardando leitura
 
--- LimiteSDec 
+-- LimiteMDec 
 tmp(120) := "0101" & "111" & "111111110";	-- STA @CLR1, R7 	#Limpar KEY1
 tmp(121) := "0001" & "001" & "101000000";	-- LDA @SW7, R1 	#Leitura do SW0-7
-tmp(122) := "1011" & "001" & "000000101";	-- ANDI @5, R1 	#Aplicar mascara a leitura do botao para só pegar SW(2 downto 0)
+tmp(122) := "1011" & "001" & "000000111";	-- ANDI @7, R1 	#Aplicar mascara a leitura do botao para só pegar SW(2 downto 0)
 tmp(123) := "1100" & "001" & "000001001";	-- CGT @VAR6, R1 	#Verificar overflow do HEX
-tmp(124) := "1101" & "000" & "011010101";	-- JGT @LimiteSDecMax 
+tmp(124) := "1101" & "000" & "010110111";	-- JGT @LimiteMDecMax 
 
--- PosLimiteSDec 
-tmp(125) := "0101" & "001" & "000000001";	-- STA @SDEC, R1 	#Guarda na memoria valor da dezena do segundo
-tmp(126) := "0101" & "001" & "100100001";	-- STA @HEX1, R1 	#Carrega leitura do SW0-7 no HEX1
+-- PosLimiteMDec 
+tmp(125) := "0101" & "001" & "000000011";	-- STA @MDEC, R1 	#Guarda na memoria valor da dezena dos minutos
+tmp(126) := "0101" & "001" & "100100011";	-- STA @HEX3, R1 	#Carrega leitura do SW0-7 no HEX3
 tmp(127) := "0001" & "000" & "101100001";	-- LDA @KEY1, R0 	#Ler KEY1
 tmp(128) := "1011" & "000" & "000000001";	-- ANDI @1, R0 	#Aplicar máscara a leitura da KEY
 tmp(129) := "1000" & "000" & "000000111";	-- CEQ @VAR1, R0 	#Ve se KEY1 está apertado
 tmp(130) := "0101" & "111" & "111111110";	-- STA @CLR1, R7 	#Limpar KEY1
-tmp(131) := "0111" & "000" & "010000101";	-- JEQ @PosLSD 	#Se tiver, guarda e vai embora
-tmp(132) := "0110" & "000" & "001111000";	-- JMP @LimiteSDec 	#Caso contrario, faz de novo
+tmp(131) := "0111" & "000" & "010000101";	-- JEQ @PosLMD 	#Se tiver, guarda e vai embora
+tmp(132) := "0110" & "000" & "001111000";	-- JMP @LimiteMDec 	#Caso contrario, faz de novo
 
--- PosLSD 
-tmp(133) := "0100" & "000" & "000000100";	-- LDI $4, R0
-tmp(134) := "0101" & "000" & "100000000";	-- STA @LEDR7, R0 	#Liga LEDR2 pra indicar aguardando leitura
+-- PosLMD 
+tmp(133) := "0100" & "000" & "000010000";	-- LDI $16, R0
+tmp(134) := "0101" & "000" & "100000000";	-- STA @LEDR7, R0 	#Liga LEDR4 pra indicar aguardando leitura
 
--- LimiteMUni 
+-- LimiteHUni 
 tmp(135) := "0101" & "111" & "111111110";	-- STA @CLR1, R7 	#Limpar KEY1
 tmp(136) := "0001" & "001" & "101000000";	-- LDA @SW7, R1 	#Leitura do SW0-7
 tmp(137) := "1011" & "001" & "000001111";	-- ANDI @15, R1 	#Aplicar mascara a leitura do botao para só pegar SW(3 downto 0)
 tmp(138) := "1100" & "001" & "000001000";	-- CGT @VAR10, R1 	#Verificar overflow do HEX
-tmp(139) := "1101" & "000" & "011010111";	-- JGT @LimiteMUniMax 
+tmp(139) := "1101" & "000" & "010111001";	-- JGT @LimiteHUniMax 
 
--- PosLimiteMUni 
-tmp(140) := "0101" & "001" & "000000010";	-- STA @MUNI, R1 	#Guarda na memoria valor da unidade dos minutos
-tmp(141) := "0101" & "001" & "100100010";	-- STA @HEX2, R1 	#Carrega leitura do SW0-7 no HEX2
+-- PosLimiteHUni 
+tmp(140) := "0101" & "001" & "000000100";	-- STA @HUNI, R1 	#Guarda na memoria valor da unidade da hora
+tmp(141) := "0101" & "001" & "100100100";	-- STA @HEX4, R1 	#Carrega leitura do SW0-7 no HEX4
 tmp(142) := "0001" & "000" & "101100001";	-- LDA @KEY1, R0 	#Ler KEY1
 tmp(143) := "1011" & "000" & "000000001";	-- ANDI @1, R0 	#Aplicar máscara a leitura da KEY
 tmp(144) := "1000" & "000" & "000000111";	-- CEQ @VAR1, R0 	#Ve se KEY1 está apertado
 tmp(145) := "0101" & "111" & "111111110";	-- STA @CLR1, R7 	#Limpar KEY1
-tmp(146) := "0111" & "000" & "010010100";	-- JEQ @PosLMU 	#Se tiver, guarda e vai embora
-tmp(147) := "0110" & "000" & "010000111";	-- JMP @LimiteMUni 	#Caso contrario, faz de novo
-
--- PosLMU 
-tmp(148) := "0100" & "000" & "000001000";	-- LDI $8, R0
-tmp(149) := "0101" & "000" & "100000000";	-- STA @LEDR7, R0 	#Liga LEDR3 pra indicar aguardando leitura
-
--- LimiteMDec 
-tmp(150) := "0101" & "111" & "111111110";	-- STA @CLR1, R7 	#Limpar KEY1
-tmp(151) := "0001" & "001" & "101000000";	-- LDA @SW7, R1 	#Leitura do SW0-7
-tmp(152) := "1011" & "001" & "000000101";	-- ANDI @5, R1 	#Aplicar mascara a leitura do botao para só pegar SW(2 downto 0)
-tmp(153) := "1100" & "001" & "000001001";	-- CGT @VAR6, R1 	#Verificar overflow do HEX
-tmp(154) := "1101" & "000" & "011011001";	-- JGT @LimiteMDecMax 
-
--- PosLimiteMDec 
-tmp(155) := "0101" & "001" & "000000011";	-- STA @MDEC, R1 	#Guarda na memoria valor da dezena dos minutos
-tmp(156) := "0101" & "001" & "100100011";	-- STA @HEX3, R1 	#Carrega leitura do SW0-7 no HEX3
-tmp(157) := "0001" & "000" & "101100001";	-- LDA @KEY1, R0 	#Ler KEY1
-tmp(158) := "1011" & "000" & "000000001";	-- ANDI @1, R0 	#Aplicar máscara a leitura da KEY
-tmp(159) := "1000" & "000" & "000000111";	-- CEQ @VAR1, R0 	#Ve se KEY1 está apertado
-tmp(160) := "0101" & "111" & "111111110";	-- STA @CLR1, R7 	#Limpar KEY1
-tmp(161) := "0111" & "000" & "010100011";	-- JEQ @PosLMD 	#Se tiver, guarda e vai embora
-tmp(162) := "0110" & "000" & "010010110";	-- JMP @LimiteMDec 	#Caso contrario, faz de novo
-
--- PosLMD 
-tmp(163) := "0100" & "000" & "000010000";	-- LDI $16, R0
-tmp(164) := "0101" & "000" & "100000000";	-- STA @LEDR7, R0 	#Liga LEDR4 pra indicar aguardando leitura
-
--- LimiteHUni 
-tmp(165) := "0101" & "111" & "111111110";	-- STA @CLR1, R7 	#Limpar KEY1
-tmp(166) := "0001" & "001" & "101000000";	-- LDA @SW7, R1 	#Leitura do SW0-7
-tmp(167) := "1011" & "001" & "000001111";	-- ANDI @15, R1 	#Aplicar mascara a leitura do botao para só pegar SW(3 downto 0)
-tmp(168) := "1100" & "001" & "000001000";	-- CGT @VAR10, R1 	#Verificar overflow do HEX
-tmp(169) := "1101" & "000" & "011011011";	-- JGT @LimiteHUniMax 
-
--- PosLimiteHUni 
-tmp(170) := "0101" & "001" & "000000100";	-- STA @HUNI, R1 	#Guarda na memoria valor da unidade da hora
-tmp(171) := "0101" & "001" & "100100100";	-- STA @HEX4, R1 	#Carrega leitura do SW0-7 no HEX4
-tmp(172) := "0001" & "000" & "101100001";	-- LDA @KEY1, R0 	#Ler KEY1
-tmp(173) := "1011" & "000" & "000000001";	-- ANDI @1, R0 	#Aplicar máscara a leitura da KEY
-tmp(174) := "1000" & "000" & "000000111";	-- CEQ @VAR1, R0 	#Ve se KEY1 está apertado
-tmp(175) := "0101" & "111" & "111111110";	-- STA @CLR1, R7 	#Limpar KEY1
-tmp(176) := "0111" & "000" & "010110010";	-- JEQ @PosLHU 	#Se tiver, guarda e vai embora
-tmp(177) := "0110" & "000" & "010100101";	-- JMP @LimiteHUni 	#Caso contrario, faz de novo
+tmp(146) := "0111" & "000" & "010010100";	-- JEQ @PosLHU 	#Se tiver, guarda e vai embora
+tmp(147) := "0110" & "000" & "010000111";	-- JMP @LimiteHUni 	#Caso contrario, faz de novo
 
 -- PosLHU 
-tmp(178) := "0100" & "000" & "000100000";	-- LDI $32, R0
-tmp(179) := "0101" & "000" & "100000000";	-- STA @LEDR7, R0 	#Liga LEDR5 pra indicar aguardando leitura
-tmp(180) := "0101" & "010" & "000000100";	-- STA @HUNI, R2 	#Verificar unidade da hora -> se for maior que 4, nao pode colocar 2 na hora
-tmp(181) := "1100" & "010" & "000001011";	-- CGT @VAR5, R2 	#Verificar overflow do HEX
-tmp(182) := "1101" & "000" & "011000110";	-- JGT @LimiteHDecRestringe 
+tmp(148) := "0100" & "000" & "000100000";	-- LDI $32, R0
+tmp(149) := "0101" & "000" & "100000000";	-- STA @LEDR7, R0 	#Liga LEDR5 pra indicar aguardando leitura
+tmp(150) := "0001" & "000" & "000000100";	-- LDA @HUNI, R0 	#Verificar unidade da hora -> se for maior que 4, nao pode colocar 2 na hora
+tmp(151) := "1100" & "000" & "000001101";	-- CGT @VAR4, R0 	#Verificar overflow do HEX
+tmp(152) := "1101" & "000" & "010101000";	-- JGT @LimiteHDecRestringe 
 
 -- LimiteHDec 
-tmp(183) := "0101" & "111" & "111111110";	-- STA @CLR1, R7 	#Limpar KEY1
-tmp(184) := "0001" & "001" & "101000000";	-- LDA @SW7, R1 	#Leitura do SW0-7
-tmp(185) := "1011" & "001" & "000000010";	-- ANDI @2, R1 	#Aplicar mascara a leitura do botao para só pegar SW(3 downto 0)
-tmp(186) := "1100" & "001" & "000001010";	-- CGT @VAR3, R1 	#Verificar overflow do HEX
-tmp(187) := "1101" & "000" & "011011101";	-- JGT @LimiteHDecMax 
+tmp(153) := "0101" & "111" & "111111110";	-- STA @CLR1, R7 	#Limpar KEY1
+tmp(154) := "0001" & "001" & "101000000";	-- LDA @SW7, R1 	#Leitura do SW0-7
+tmp(155) := "1011" & "001" & "000000011";	-- ANDI @3, R1 	#Aplicar mascara a leitura do botao para só pegar SW(1 downto 0)
+tmp(156) := "1000" & "001" & "000001010";	-- CEQ @VAR3, R1 	#Verificar overflow do HEX
+tmp(157) := "0111" & "000" & "010111011";	-- JEQ @LimiteHDecMax 
 
 -- PosLimiteHDec 
-tmp(188) := "0101" & "001" & "000000101";	-- STA @HDEC, R1 	#Guarda na memoria valor da unidade da hora
-tmp(189) := "0101" & "001" & "100100101";	-- STA @HEX5, R1 	#Carrega leitura do SW0-7 no HEX4
-tmp(190) := "0001" & "000" & "101100001";	-- LDA @KEY1, R0 	#Ler KEY1
-tmp(191) := "1011" & "000" & "000000001";	-- ANDI @1, R0 	#Aplicar máscara a leitura da KEY
-tmp(192) := "1000" & "000" & "000000111";	-- CEQ @VAR1, R0 	#Ve se KEY1 está apertado
-tmp(193) := "0101" & "111" & "111111110";	-- STA @CLR1, R7 	#Limpar KEY1
-tmp(194) := "0111" & "000" & "011000100";	-- JEQ @PosLHD 	#Se tiver, guarda e vai embora
-tmp(195) := "0110" & "000" & "010110111";	-- JMP @LimiteHDec 	#Caso contrario, faz de novo
+tmp(158) := "0101" & "001" & "000000101";	-- STA @HDEC, R1 	#Guarda na memoria valor da unidade da hora
+tmp(159) := "0101" & "001" & "100100101";	-- STA @HEX5, R1 	#Carrega leitura do SW0-7 no HEX4
+tmp(160) := "0001" & "000" & "101100001";	-- LDA @KEY1, R0 	#Ler KEY1
+tmp(161) := "1011" & "000" & "000000001";	-- ANDI @1, R0 	#Aplicar máscara a leitura da KEY
+tmp(162) := "1000" & "000" & "000000111";	-- CEQ @VAR1, R0 	#Ve se KEY1 está apertado
+tmp(163) := "0101" & "111" & "111111110";	-- STA @CLR1, R7 	#Limpar KEY1
+tmp(164) := "0111" & "000" & "010100110";	-- JEQ @PosLHD 	#Se tiver, guarda e vai embora
+tmp(165) := "0110" & "000" & "010011001";	-- JMP @LimiteHDec 	#Caso contrario, faz de novo
 
 -- PosLHD 
-tmp(196) := "0101" & "111" & "100000000";	-- STA @LEDR7, R7 	#Desliga LEDR0-7
-tmp(197) := "1010" & "000" & "000000000";	-- RET
+tmp(166) := "0101" & "111" & "100000000";	-- STA @LEDR7, R7 	#Desliga LEDR0-7
+tmp(167) := "1010" & "000" & "000000000";	-- RET
 
 -- LimiteHDecRestringe 
-tmp(198) := "0101" & "111" & "111111110";	-- STA @CLR1, R7 	#Limpar KEY1
-tmp(199) := "0001" & "001" & "101000000";	-- LDA @SW7, R1 	#Leitura do SW0-7
-tmp(200) := "1011" & "001" & "000000001";	-- ANDI @1, R1 	#Aplicar mascara a leitura do botao para só pegar SW(3 downto 0)
-tmp(201) := "0101" & "001" & "000000101";	-- STA @HDEC, R1 	#Guarda na memoria valor da unidade da hora
-tmp(202) := "0101" & "001" & "100100101";	-- STA @HEX5, R1 	#Carrega leitura do SW0-7 no HEX4
-tmp(203) := "0001" & "000" & "101100001";	-- LDA @KEY1, R0 	#Ler KEY1
-tmp(204) := "1011" & "000" & "000000001";	-- ANDI @1, R0 	#Aplicar máscara a leitura da KEY
-tmp(205) := "1000" & "000" & "000000111";	-- CEQ @VAR1, R0 	#Ve se KEY1 está apertado
-tmp(206) := "0101" & "111" & "111111110";	-- STA @CLR1, R7 	#Limpar KEY1
-tmp(207) := "0111" & "000" & "011010001";	-- JEQ @PosLHDR 	#Se tiver, guarda e vai embora
-tmp(208) := "0110" & "000" & "011000110";	-- JMP @LimiteHDecRestringe 	#Caso contrario, faz de novo
+tmp(168) := "0101" & "111" & "111111110";	-- STA @CLR1, R7 	#Limpar KEY1
+tmp(169) := "0001" & "001" & "101000000";	-- LDA @SW7, R1 	#Leitura do SW0-7
+tmp(170) := "1011" & "001" & "000000001";	-- ANDI @1, R1 	#Aplicar mascara a leitura do botao para só pegar SW(3 downto 0)
+tmp(171) := "0101" & "001" & "000000101";	-- STA @HDEC, R1 	#Guarda na memoria valor da unidade da hora
+tmp(172) := "0101" & "001" & "100100101";	-- STA @HEX5, R1 	#Carrega leitura do SW0-7 no HEX4
+tmp(173) := "0001" & "000" & "101100001";	-- LDA @KEY1, R0 	#Ler KEY1
+tmp(174) := "1011" & "000" & "000000001";	-- ANDI @1, R0 	#Aplicar máscara a leitura da KEY
+tmp(175) := "1000" & "000" & "000000111";	-- CEQ @VAR1, R0 	#Ve se KEY1 está apertado
+tmp(176) := "0101" & "111" & "111111110";	-- STA @CLR1, R7 	#Limpar KEY1
+tmp(177) := "0111" & "000" & "010110011";	-- JEQ @PosLHDR 	#Se tiver, guarda e vai embora
+tmp(178) := "0110" & "000" & "010101000";	-- JMP @LimiteHDecRestringe 	#Caso contrario, faz de novo
 
 -- PosLHDR 
-tmp(209) := "0101" & "111" & "100000000";	-- STA @LEDR7, R7 	#Desliga LEDR0-7
-tmp(210) := "1010" & "000" & "000000000";	-- RET
-
--- LimiteSUniMax 
-tmp(211) := "0100" & "001" & "000001001";	-- LDI $9, R1 	#Carrega 9 no R1
-tmp(212) := "0110" & "000" & "001101110";	-- JMP @PosLimiteSUni 	#Volta
-
--- LimiteSDecMax 
-tmp(213) := "0100" & "001" & "000000101";	-- LDI $5, R1 	#Carrega 5 no R1
-tmp(214) := "0110" & "000" & "001111101";	-- JMP @PosLimiteSDec 	#Volta
+tmp(179) := "0101" & "111" & "100000000";	-- STA @LEDR7, R7 	#Desliga LEDR0-7
+tmp(180) := "1010" & "000" & "000000000";	-- RET
 
 -- LimiteMUniMax 
-tmp(215) := "0100" & "001" & "000001001";	-- LDI $9, R1 	#Carrega 9 no R1
-tmp(216) := "0110" & "000" & "010001100";	-- JMP @PosLimiteMUni 	#Volta
+tmp(181) := "0100" & "001" & "000001001";	-- LDI $9, R1 	#Carrega 9 no R1
+tmp(182) := "0110" & "000" & "001101110";	-- JMP @PosLimiteMUni 	#Volta
 
 -- LimiteMDecMax 
-tmp(217) := "0100" & "001" & "000000101";	-- LDI $5, R1 	#Carrega 5 no R1
-tmp(218) := "0110" & "000" & "010011011";	-- JMP @PosLimiteMDec 	#Volta
+tmp(183) := "0100" & "001" & "000000101";	-- LDI $5, R1 	#Carrega 5 no R1
+tmp(184) := "0110" & "000" & "001111101";	-- JMP @PosLimiteMDec 	#Volta
 
 -- LimiteHUniMax 
-tmp(219) := "0100" & "001" & "000001001";	-- LDI $9, R1 	#Carrega 9 no R1
-tmp(220) := "0110" & "000" & "010101010";	-- JMP @PosLimiteHUni 	#Volta
+tmp(185) := "0100" & "001" & "000001001";	-- LDI $9, R1 	#Carrega 9 no R1
+tmp(186) := "0110" & "000" & "010001100";	-- JMP @PosLimiteHUni 	#Volta
 
 -- LimiteHDecMax 
-tmp(221) := "0100" & "001" & "000000010";	-- LDI $2, R1 	#Carrega 2 no R1
-tmp(222) := "0110" & "000" & "010111100";	-- JMP @PosLimiteHDec 	#Volta
+tmp(187) := "0100" & "001" & "000000010";	-- LDI $2, R1 	#Carrega 2 no R1
+tmp(188) := "0110" & "000" & "010011110";	-- JMP @PosLimiteHDec 	#Volta
 
 -- Verificar 
-tmp(223) := "0001" & "011" & "000000000";	-- LDA @SUNI, R3 	#Carrega valor da unidade dos segundos
-tmp(224) := "1000" & "011" & "000001100";	-- CEQ @VAR9, R3 	#Compara unidade com o limite
-tmp(225) := "0111" & "000" & "011100011";	-- JEQ @VerificarSDec 	#Se estiver no limite, checar dezena
-tmp(226) := "1010" & "000" & "000000000";	-- RET
+tmp(189) := "0001" & "011" & "000000000";	-- LDA @SUNI, R3 	#Carrega valor da unidade dos segundos
+tmp(190) := "1000" & "011" & "000001100";	-- CEQ @VAR9, R3 	#Compara unidade com o limite
+tmp(191) := "0111" & "000" & "011000001";	-- JEQ @VerificarSDec 	#Se estiver no limite, checar dezena
+tmp(192) := "1010" & "000" & "000000000";	-- RET
 
 -- VerificarSDec 
-tmp(227) := "0001" & "011" & "000000001";	-- LDA @SDEC, R3 	#Carrega valor da dezena
-tmp(228) := "1000" & "011" & "000001011";	-- CEQ @VAR5, R3 	#Compara dezena com o limite
-tmp(229) := "0111" & "000" & "011100111";	-- JEQ @VerificarMUni 	#Se estiver no limite, checar centena
-tmp(230) := "1010" & "000" & "000000000";	-- RET
+tmp(193) := "0001" & "011" & "000000001";	-- LDA @SDEC, R3 	#Carrega valor da dezena
+tmp(194) := "1000" & "011" & "000001011";	-- CEQ @VAR5, R3 	#Compara dezena com o limite
+tmp(195) := "0111" & "000" & "011000101";	-- JEQ @VerificarMUni 	#Se estiver no limite, checar centena
+tmp(196) := "1010" & "000" & "000000000";	-- RET
 
 -- VerificarMUni 
-tmp(231) := "0001" & "011" & "000000010";	-- LDA @MUNI, R3 	#Carrega valor da centena
-tmp(232) := "1000" & "011" & "000001100";	-- CEQ @VAR9, R3 	#Compara centena com o limite
-tmp(233) := "0111" & "000" & "011101011";	-- JEQ @VerificarMDec 	#Se estiver no limite, checar unidade de milhar
-tmp(234) := "1010" & "000" & "000000000";	-- RET
+tmp(197) := "0001" & "011" & "000000010";	-- LDA @MUNI, R3 	#Carrega valor da centena
+tmp(198) := "1000" & "011" & "000001100";	-- CEQ @VAR9, R3 	#Compara centena com o limite
+tmp(199) := "0111" & "000" & "011001001";	-- JEQ @VerificarMDec 	#Se estiver no limite, checar unidade de milhar
+tmp(200) := "1010" & "000" & "000000000";	-- RET
 
 -- VerificarMDec 
-tmp(235) := "0001" & "011" & "000000011";	-- LDA @MDEC, R3 	#Carrega valor da unidade de milhar
-tmp(236) := "1000" & "011" & "000001011";	-- CEQ @VAR5, R3 	#Compara unidade de milhar com o limite
-tmp(237) := "0111" & "000" & "011101111";	-- JEQ @VerificarHUni 	#Se estiver no limite, checar dezena de milhar
-tmp(238) := "1010" & "000" & "000000000";	-- RET
+tmp(201) := "0001" & "011" & "000000011";	-- LDA @MDEC, R3 	#Carrega valor da unidade de milhar
+tmp(202) := "1000" & "011" & "000001011";	-- CEQ @VAR5, R3 	#Compara unidade de milhar com o limite
+tmp(203) := "0111" & "000" & "011001101";	-- JEQ @VerificarHUni 	#Se estiver no limite, checar dezena de milhar
+tmp(204) := "1010" & "000" & "000000000";	-- RET
 
 -- VerificarHUni 
-tmp(239) := "0001" & "011" & "000000100";	-- LDA @HUNI, R3 	#Carrega valor da dezena de milhar
-tmp(240) := "1000" & "011" & "000001101";	-- CEQ @VAR4, R3 	#Compara dezena de milhar com o limite
-tmp(241) := "0111" & "000" & "011110011";	-- JEQ @VerificarHDec 	#Se estiver no limite, checar centena de milhar
-tmp(242) := "1010" & "000" & "000000000";	-- RET
+tmp(205) := "0001" & "011" & "000000100";	-- LDA @HUNI, R3 	#Carrega valor da dezena de milhar
+tmp(206) := "1000" & "011" & "000001010";	-- CEQ @VAR3, R3 	#Compara dezena de milhar com o limite
+tmp(207) := "0111" & "000" & "011010001";	-- JEQ @VerificarHDec 	#Se estiver no limite, checar centena de milhar
+tmp(208) := "1010" & "000" & "000000000";	-- RET
 
 -- VerificarHDec 
-tmp(243) := "0001" & "011" & "000000101";	-- LDA @HDEC, R3 	#Carrega valor da centena de milhar
-tmp(244) := "1000" & "011" & "000001110";	-- CEQ @VAR2, R3 	#Compara centena de milhar com o limite
-tmp(245) := "0111" & "000" & "011110111";	-- JEQ @LimiteAtingido 	#Se estiver no limite, pular pra SR de limite atingido
-tmp(246) := "1010" & "000" & "000000000";	-- RET
+tmp(209) := "0001" & "011" & "000000101";	-- LDA @HDEC, R3 	#Carrega valor da centena de milhar
+tmp(210) := "1000" & "011" & "000001110";	-- CEQ @VAR2, R3 	#Compara centena de milhar com o limite
+tmp(211) := "0111" & "000" & "011010101";	-- JEQ @LimiteAtingido 	#Se estiver no limite, pular pra SR de limite atingido
+tmp(212) := "1010" & "000" & "000000000";	-- RET
 
 -- LimiteAtingido 
-tmp(247) := "0101" & "111" & "000000000";	-- STA @SUNI, R7 	#Limpando os 7 segmentos
-tmp(248) := "0101" & "111" & "000000001";	-- STA @SDEC, R7
-tmp(249) := "0101" & "111" & "000000010";	-- STA @MUNI, R7
-tmp(250) := "0101" & "111" & "000000011";	-- STA @MDEC, R7
-tmp(251) := "0101" & "111" & "000000100";	-- STA @HUNI, R7
-tmp(252) := "0101" & "111" & "000000101";	-- STA @HDEC, R7
+tmp(213) := "0101" & "111" & "000000000";	-- STA @SUNI, R7 	#Limpando os 7 segmentos
+tmp(214) := "0101" & "111" & "000000001";	-- STA @SDEC, R7
+tmp(215) := "0101" & "111" & "000000010";	-- STA @MUNI, R7
+tmp(216) := "0101" & "111" & "000000011";	-- STA @MDEC, R7
+tmp(217) := "0101" & "111" & "000000100";	-- STA @HUNI, R7
+tmp(218) := "0101" & "111" & "000000101";	-- STA @HDEC, R7
 
 -- Retorno 
-tmp(253) := "1010" & "000" & "000000000";	-- RET
-
+tmp(219) := "1010" & "000" & "000000000";	-- RET
 
         return tmp;
     end initMemory;

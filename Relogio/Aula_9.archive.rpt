@@ -1,5 +1,5 @@
 Archive Project report for Aula_9
-Fri Oct 21 15:09:02 2022
+Sun Nov  6 16:36:00 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -36,7 +36,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------+
 ; Archive Project Summary                                        ;
 +------------------------+---------------------------------------+
-; Archive Project Status ; Successful - Fri Oct 21 15:09:02 2022 ;
+; Archive Project Status ; Successful - Sun Nov  6 16:36:00 2022 ;
 ; Revision Name          ; Aula_9                                ;
 ; Top-level Entity Name  ; Aula_9                                ;
 ; Family                 ; Cyclone V                             ;
@@ -51,18 +51,18 @@ Info: File Set 'Source control' contains:
     Info: Automatically detected source files
 Warning: Hierarchical Platform Designer systems and custom IP components(_hw.tcl and associated files) are not archived by the Quartus Archiver
 Info: Archive will store files relative to the closest common parent directory
-Info (13213): Using common directory /home/osboxes/DesComp/Aula_9/
+Info (13213): Using common directory /home/osboxes/DesComp/Projeto_1_Relogio/Relogio/
 Info: ----------------------------------------------------------
 Info: ----------------------------------------------------------
-Info: Generated archive '/home/osboxes/DesComp/Aula_9/Projeto_1_Contador.qar'
+Info: Generated archive '/home/osboxes/DesComp/Projeto_1_Relogio/Relogio/Projeto_1_Relogio.qar'
 Info: ----------------------------------------------------------
 Info: ----------------------------------------------------------
 Info: Generated report 'Aula_9.archive.rpt'
 Info (23030): Evaluation of Tcl script /home/osboxes/intelFPGA_lite/20.1/quartus/common/tcl/apps/qpm/qar.tcl was successful
 Info: Quartus Prime Shell was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 586 megabytes
-    Info: Processing ended: Fri Oct 21 15:09:02 2022
-    Info: Elapsed time: 00:01:48
+    Info: Peak virtual memory: 584 megabytes
+    Info: Processing ended: Sun Nov  6 16:36:00 2022
+    Info: Elapsed time: 00:00:58
     Info: Total CPU time (on all processors): 00:00:01
 
 
@@ -75,11 +75,13 @@ Info: Quartus Prime Shell was successful. 0 errors, 1 warning
 ; Aula_9.qpf                                                                ;
 ; Aula_9.qsf                                                                ;
 ; Aula_9.vhd                                                                ;
+; bancoRegistradoresArqRegMem.vhd                                           ;
 ; buffer_3_state.vhd                                                        ;
 ; buffer_3_state_8portas.vhd                                                ;
 ; conversorHex7Seg.vhd                                                      ;
 ; decoder3x8.vhd                                                            ;
 ; decoderInstru.vhd                                                         ;
+; divisorGenerico.vhd                                                       ;
 ; edgeDetector.vhd                                                          ;
 ; flipFlop.vhd                                                              ;
 ; logicDesvio.vhd                                                           ;

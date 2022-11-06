@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Aula_9
-Fri Nov  4 15:23:33 2022
+Sun Nov  6 14:26:31 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -93,7 +93,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Nov  4 15:23:33 2022       ;
+; Analysis & Synthesis Status     ; Successful - Sun Nov  6 14:26:31 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; Aula_9                                      ;
 ; Top-level Entity Name           ; Aula_9                                      ;
@@ -255,14 +255,14 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 566            ;
+; Estimate of Logic utilization (ALMs needed) ; 567            ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 615            ;
-;     -- 7 input functions                    ; 20             ;
-;     -- 6 input functions                    ; 337            ;
-;     -- 5 input functions                    ; 52             ;
-;     -- 4 input functions                    ; 53             ;
-;     -- <=3 input functions                  ; 153            ;
+; Combinational ALUT usage for logic          ; 619            ;
+;     -- 7 input functions                    ; 21             ;
+;     -- 6 input functions                    ; 339            ;
+;     -- 5 input functions                    ; 48             ;
+;     -- 4 input functions                    ; 61             ;
+;     -- <=3 input functions                  ; 150            ;
 ;                                             ;                ;
 ; Dedicated logic registers                   ; 683            ;
 ;                                             ;                ;
@@ -272,7 +272,7 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
 ; Maximum fan-out                             ; 678            ;
-; Total fan-out                               ; 5098           ;
+; Total fan-out                               ; 5121           ;
 ; Average fan-out                             ; 3.56           ;
 +---------------------------------------------+----------------+
 
@@ -282,13 +282,14 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------+-----------------------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                  ; Entity Name                 ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------+-----------------------------+--------------+
-; |Aula_9                                      ; 615 (29)            ; 683 (0)                   ; 0                 ; 0          ; 68   ; 0            ; |Aula_9                                                              ; Aula_9                      ; work         ;
+; |Aula_9                                      ; 619 (28)            ; 683 (0)                   ; 0                 ; 0          ; 68   ; 0            ; |Aula_9                                                              ; Aula_9                      ; work         ;
 ;    |conversorHex7Seg:ConHex0|                ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|conversorHex7Seg:ConHex0                                     ; conversorHex7Seg            ; work         ;
 ;    |conversorHex7Seg:ConHex1|                ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|conversorHex7Seg:ConHex1                                     ; conversorHex7Seg            ; work         ;
 ;    |conversorHex7Seg:ConHex2|                ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|conversorHex7Seg:ConHex2                                     ; conversorHex7Seg            ; work         ;
 ;    |conversorHex7Seg:ConHex3|                ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|conversorHex7Seg:ConHex3                                     ; conversorHex7Seg            ; work         ;
 ;    |conversorHex7Seg:ConHex4|                ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|conversorHex7Seg:ConHex4                                     ; conversorHex7Seg            ; work         ;
 ;    |conversorHex7Seg:ConHex5|                ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|conversorHex7Seg:ConHex5                                     ; conversorHex7Seg            ; work         ;
+;    |decoder3x8:decoderBloco|                 ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|decoder3x8:decoderBloco                                      ; decoder3x8                  ; work         ;
 ;    |divisorGenerico:divisorA|                ; 22 (22)             ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|divisorGenerico:divisorA                                     ; divisorGenerico             ; work         ;
 ;    |divisorGenerico:divisorN|                ; 31 (31)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|divisorGenerico:divisorN                                     ; divisorGenerico             ; work         ;
 ;    |edgeDetector:detectorSub1|               ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|edgeDetector:detectorSub1                                    ; edgeDetector                ; work         ;
@@ -303,7 +304,7 @@ https://fpgasoftware.intel.com/eula.
 ;    |flipFlop:ffLed8|                         ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|flipFlop:ffLed8                                              ; flipFlop                    ; work         ;
 ;    |flipFlop:ffLed9|                         ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|flipFlop:ffLed9                                              ; flipFlop                    ; work         ;
 ;    |memoriaRAM:memoriaRAM|                   ; 297 (297)           ; 512 (512)                 ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|memoriaRAM:memoriaRAM                                        ; memoriaRAM                  ; work         ;
-;    |memoriaROM:ROM1|                         ; 92 (92)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|memoriaROM:ROM1                                              ; memoriaROM                  ; work         ;
+;    |memoriaROM:ROM1|                         ; 96 (96)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|memoriaROM:ROM1                                              ; memoriaROM                  ; work         ;
 ;    |muxGenerico2x1:muxClock|                 ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|muxGenerico2x1:muxClock                                      ; muxGenerico2x1              ; work         ;
 ;    |processador:processador|                 ; 91 (0)              ; 84 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|processador:processador                                      ; processador                 ; work         ;
 ;       |ULASomaSub:ULA1|                      ; 27 (27)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula_9|processador:processador|ULASomaSub:ULA1                      ; ULASomaSub                  ; work         ;
@@ -854,25 +855,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA               ; 617                         ;
 ;     SCLR              ; 42                          ;
 ;     plain             ; 19                          ;
-; arriav_lcell_comb     ; 615                         ;
+; arriav_lcell_comb     ; 619                         ;
 ;     arith             ; 68                          ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 51                          ;
 ;         2 data inputs ; 10                          ;
 ;         5 data inputs ; 6                           ;
-;     extend            ; 20                          ;
-;         7 data inputs ; 20                          ;
-;     normal            ; 527                         ;
+;     extend            ; 21                          ;
+;         7 data inputs ; 21                          ;
+;     normal            ; 530                         ;
 ;         1 data inputs ; 4                           ;
-;         2 data inputs ; 80                          ;
-;         3 data inputs ; 7                           ;
-;         4 data inputs ; 53                          ;
-;         5 data inputs ; 46                          ;
-;         6 data inputs ; 337                         ;
+;         2 data inputs ; 79                          ;
+;         3 data inputs ; 5                           ;
+;         4 data inputs ; 61                          ;
+;         5 data inputs ; 42                          ;
+;         6 data inputs ; 339                         ;
 ; boundary_port         ; 68                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 10.30                       ;
-; Average LUT depth     ; 6.13                        ;
+; Average LUT depth     ; 6.15                        ;
 +-----------------------+-----------------------------+
 
 
@@ -881,7 +882,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -891,7 +892,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Fri Nov  4 15:22:27 2022
+    Info: Processing started: Sun Nov  6 14:25:26 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Aula_9 -c Aula_9
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file muxGenerico4x1.vhd
@@ -995,14 +996,14 @@ Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1305 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1309 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 16 input pins
     Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 1237 logic cells
+    Info (21061): Implemented 1241 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 507 megabytes
-    Info: Processing ended: Fri Nov  4 15:23:33 2022
-    Info: Elapsed time: 00:01:06
+    Info: Peak virtual memory: 508 megabytes
+    Info: Processing ended: Sun Nov  6 14:26:31 2022
+    Info: Elapsed time: 00:01:05
     Info: Total CPU time (on all processors): 00:00:18
 
 
